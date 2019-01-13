@@ -1,0 +1,75 @@
+" ------ basic maps ------
+
+inoremap <silent><C-v> <Esc>:set paste<CR>a<C-r>+<Esc>:set nopaste<CR>a
+" alt defaults
+nnoremap 0 ^
+nnoremap Y y$
+nnoremap n nzzzv
+nnoremap N Nzzzv
+" nnoremap <Tab> ==j
+nnoremap <Tab> ==
+" re-visual text after changing indent
+vnoremap > >gv
+vnoremap < <gv
+" toggle showcmd
+nnoremap  <Leader>s :set showcmd!<CR>
+" toggle line numbers, nn (no number)
+nnoremap  <Leader>nn :set number!<CR>
+nnoremap  <Leader>rn :set relativenumber!<CR>
+" j = gj :: k = gk  while preserving numbered jumps eg. 12j
+nnoremap <buffer><silent><expr>j v:count ? 'j' : 'gj'
+nnoremap <buffer><silent><expr>k v:count ? 'k' : 'gk'
+" open a terminal in $PWD
+nnoremap <silent> <Leader>tt :terminal<CR>
+" tab control
+nnoremap <silent> <S-j> :tabmove -1<CR>
+nnoremap <silent> <S-k> :tabmove +1<CR>
+nnoremap <silent> <Leader>n :tabnew<CR>
+nnoremap <silent> <C-k> :tabnext<CR>
+nnoremap <silent> <C-f> :tabfirst<CR>
+nnoremap <silent> <C-j> :tabprevious<CR>
+nnoremap <Leader>w :w<CR>                                                              " Save
+nnoremap <Leader>ws :mks! vimconfsession.vim<CR>                                       " Save session
+nnoremap <Leader>wa :wa<CR>                                                            " Save all window
+nnoremap <Leader>h :set hlsearch!<CR>                                                  " Toggle hlsearch
+nnoremap <Leader>a :ab<CR>                                                             " Show abbreviations
+nnoremap <Leader>b :ls<CR>                                                             " Show buffers
+nnoremap <Leader>m :marks<CR>                                                          " Show marks
+nnoremap <Leader>r :reg<CR>                                                            " Show registers
+map <Leader>c :                                                                        " Get command line
+nnoremap <Leader>l :source $MYVIMRC<CR>                                                " Source vimrc
+nnoremap <silent> <Leader>q :q<CR>                                                     " Quit window
+nnoremap <silent> <Leader>qa :qa<CR>                                                   " Quit all window
+" open a new tab in the current directory with netrw
+nnoremap <silent> <Leader>o :tabedit <C-R>=expand("%:p:h")<CR><CR>
+" split the window vertically and horizontally
+nnoremap _ <C-W>s<C-W><Down>
+nnoremap <Bar> <C-W>v<C-W><Right>
+" strip trailing whitespace, ss (strip space)
+nnoremap <silent> <Leader>ss
+    \ :let b:_p = getpos(".") <Bar>
+    \  let b:_s = (@/ != '') ? @/ : '' <Bar>
+    \  %s/\s\+$//e <Bar>
+    \  let @/ = b:_s <Bar>
+    \  nohlsearch <Bar>
+    \  unlet b:_s <Bar>
+    \  call setpos('.', b:_p) <Bar>
+    \  unlet b:_p <CR>
+
+" open ranger as a file chooser using the function below
+" nnoremap <leader>r :call <SID>ranger()<CR>
+
+" match string to switch buffer
+" nnoremap <Leader>b :let b:buf = input('Match: ')<Bar>call <SID>bufferselect(b:buf)<CR>
+
+" paste while in insert mode
+" change windows with ctrl+(hjkl)
+" nnoremap <C-J> <C-W><C-J>
+" nnoremap <C-K> <C-W><C-K>
+" nnoremap <C-L> <C-W><C-L>
+" nnoremap <C-H> <C-W><C-H>
+
+" close current buffer and/or tab
+" nnoremap <silent> <Leader>q :B<CR>:silent tabclose<CR>gT
+" nnoremap <silent> <Leader>tl :execute "tabn ".g:lasttab<CR>
+

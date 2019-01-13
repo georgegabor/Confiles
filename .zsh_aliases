@@ -1,0 +1,123 @@
+# ===================================================================
+# ============================ Aliases ==============================
+# ===================================================================
+alias l='ls'
+alias all='ls -a'
+alias ll='ls -lA'
+alias ls='ls --color=auto'
+alias upd='sudo pacman -Syyu'                               # Update
+alias install='sudo pacman -S'                              # Install package
+alias pac='sudo pacman --color auto'
+alias shwinstalledpackages="pacman -Qs"                     # Show installed packages/programs
+alias rmvpkg='sudo pacman -Rsn'                             # Remove a package
+alias shwnotneededpackages="pacman -Qdtq"                   # Find all the unnecessary packages
+alias rmvdir="sudo rm -rfv" # + Name of directory           # Delete a directory
+alias ht="htop -t"                                          # Htop tree like display
+alias cc="clear"                                            # Clear screen
+alias kb="setxkbmap -v 10 "                                 # Set keyboard
+alias merge='xrdb -merge ~/.Xresources'
+alias grubup='sudo grub-mkconfig -o /boot/grub/grub.cfg'
+alias l24='find . -mtime -1 -ls'                            # List all files that has been modified in the last day(24hours back)
+alias sdn="shutdown now"
+alias dl="dirs -v"                                          # List directories in the current shell session
+alias mirrors='sudo reflector --score 100 --fastest 25 --sort rate --save /etc/pacman.d/mirrorlist --verbose'
+
+# ===================================================================
+# ====================== Custom Funtions ============================
+# ===================================================================
+
+# Define colors for printing
+red=$'\e[1;31m'
+grn=$'\e[1;32m'
+yel=$'\e[1;33m'
+blu=$'\e[1;34m'
+mag=$'\e[1;35m'
+cyn=$'\e[1;36m'
+end=$'\e[0m'
+
+# Reload zshrc, so no need to restart
+function rez()
+    {
+        printf "%s\n" "${grn}Reloading .zshrc...${end}"
+        source $HOME/.zshrc
+    }
+
+# Reconfigure openbox, so no need to restart
+function reb()
+    {
+
+        printf "%s\n" "${grn}Reconfiguring openbox...${end}"
+        openbox --reconfigure
+    }
+
+# Git status: write the whole output of the 'git status' command into the tempgit file, then display only the modified ones
+function gstat()
+    {
+        git status > $HOME/.tempgit
+        grep -E "modified|new file" $HOME/.tempgit
+    }
+
+# Commit and push
+function gitup()
+    {
+        printf "%s\n" "${red} >>> ${yel} Committing ${end}"
+        git commit -a -m "Up"
+        printf "%s\n" "${red} >>> ${yel} Let's push ${end}"
+        git push
+    }
+
+# Copy config files
+function cpy_Asus_Files_To_Repo()
+        {
+            cp -v $HOME/.zsh_history $HOME/.config/Commonfiles
+            cp -v $HOME/.vimrc $HOME/.config/Commonfiles
+            cp -v $HOME/.zshrc $HOME/.config/Commonfiles
+            cp -v $HOME/.zsh_aliases $HOME/.config/Commonfiles
+            cp -v $HOME/vimhelp.yaml $HOME/.config/Commonfiles
+            cp -v $HOME/.config/qutebrowser/quickmarks $HOME/.config/Commonfiles
+            cp -v $HOME/.vim/abbreviations.vim $HOME/.config/Commonfiles/.vim.backup
+            cp -v -r $HOME/.config/openbox $HOME/.config/asusconfiles
+            cp -v -r $HOME/.config/polybar $HOME/.config/asusconfiles
+        }
+
+# Copy config files
+function cpy_Compaq_Files_To_Repo()
+        {
+            cp -v $HOME/.zsh_history $HOME/.config/Commonfiles
+            cp -v $HOME/.vimrc $HOME/.config/Commonfiles
+            cp -v $HOME/.zshrc $HOME/.config/Commonfiles
+            cp -v $HOME/.zsh_aliases $HOME/.config/Commonfiles
+            cp -v $HOME/vimhelp.yaml $HOME/.config/Commonfiles
+            cp -v $HOME/.config/qutebrowser/quickmarks $HOME/.config/Commonfiles
+            cp -v $HOME/.vim/abbreviations.vim $HOME/.config/Commonfiles/.vim/
+            cp -v -r $HOME/.config/openbox $HOME/.config/compaqconfiles
+            cp -v -r $HOME/.config/polybar $HOME/.config/compaqconfiles
+        }
+
+# Copy config files
+function cpy_from_Common_files_to_Home()
+        {
+            cp -v $HOME/.vimrc $HOME/.backup
+            cp -v $HOME/.zshrc $HOME/.backup
+            cp -v $HOME/.zsh_aliases $HOME/.backup
+            cp -v $HOME/.config/Commonfiles/.* $HOME
+            cp -v $HOME/.config/Commonfiles/vimhelp.yaml $HOME
+            cp -v $HOME/.config/Commonfiles/quickmarks $HOME/.config/qutebrowser
+            cp -v $HOME/.config/Commonfiles/.vim/abbreviations.vim $HOME/.vim/
+            rezsh
+        }
+
+# Find file
+function ff()
+    {
+        if [ "$1" != "" ]
+        then
+            find . -name "$1" -type f $2
+        else
+            echo "No arguments, nothing to find :-)"
+        fi # closing statement of if-else block
+    }
+
+# ===================================================================
+#
+# ===================================================================
