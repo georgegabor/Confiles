@@ -67,44 +67,31 @@ function gitup()
     }
 
 # Copy config files
-function cpy_Asus_Files_To_Repo()
+function backup_Asus()
         {
-            cp -v $HOME/.zsh_history $HOME/.config/Commonfiles
-            cp -v $HOME/.vimrc $HOME/.config/Commonfiles
-            cp -v $HOME/.zshrc $HOME/.config/Commonfiles
-            cp -v $HOME/.zsh_aliases $HOME/.config/Commonfiles
-            cp -v $HOME/vimhelp.yaml $HOME/.config/Commonfiles
-            cp -v $HOME/.config/qutebrowser/quickmarks $HOME/.config/Commonfiles
-            cp -v $HOME/.vim/abbreviations.vim $HOME/.config/Commonfiles/.vim.backup
+            cp -v $HOME/.zsh_history $HOME/.backup
+            cp -v $HOME/.vimrc $HOME/.backup
+            cp -v $HOME/.zshrc $HOME/.backup
+            cp -v $HOME/.zsh_aliases $HOME/.backup
+            cp -v $HOME/vimhelp.yaml $HOME/.backup
+            cp -v $HOME/.config/qutebrowser/quickmarks $HOME/.backup
+            cp -v $HOME/.vim/abbreviations.vim $HOME/.backup/.vim/
             cp -v -r $HOME/.config/openbox $HOME/.config/asusconfiles
             cp -v -r $HOME/.config/polybar $HOME/.config/asusconfiles
         }
 
 # Copy config files
-function cpy_Compaq_Files_To_Repo()
+function backup_Compaq()
         {
-            cp -v $HOME/.zsh_history $HOME/.config/Commonfiles
-            cp -v $HOME/.vimrc $HOME/.config/Commonfiles
-            cp -v $HOME/.zshrc $HOME/.config/Commonfiles
-            cp -v $HOME/.zsh_aliases $HOME/.config/Commonfiles
-            cp -v $HOME/vimhelp.yaml $HOME/.config/Commonfiles
-            cp -v $HOME/.config/qutebrowser/quickmarks $HOME/.config/Commonfiles
-            cp -v $HOME/.vim/abbreviations.vim $HOME/.config/Commonfiles/.vim/
-            cp -v -r $HOME/.config/openbox $HOME/.config/compaqconfiles
-            cp -v -r $HOME/.config/polybar $HOME/.config/compaqconfiles
-        }
-
-# Copy config files
-function cpy_from_Common_files_to_Home()
-        {
+            cp -v $HOME/.zsh_history $HOME/.backup
             cp -v $HOME/.vimrc $HOME/.backup
             cp -v $HOME/.zshrc $HOME/.backup
             cp -v $HOME/.zsh_aliases $HOME/.backup
-            cp -v $HOME/.config/Commonfiles/.* $HOME
-            cp -v $HOME/.config/Commonfiles/vimhelp.yaml $HOME
-            cp -v $HOME/.config/Commonfiles/quickmarks $HOME/.config/qutebrowser
-            cp -v $HOME/.config/Commonfiles/.vim/abbreviations.vim $HOME/.vim/
-            rezsh
+            cp -v $HOME/vimhelp.yaml $HOME/.backup
+            cp -v $HOME/.config/qutebrowser/quickmarks $HOME/.backup
+            cp -v $HOME/.vim/abbreviations.vim $HOME/.backup/.vim/
+            cp -v -r $HOME/.config/openbox $HOME/.config/compaqconfiles
+            cp -v -r $HOME/.config/polybar $HOME/.config/compaqconfiles
         }
 
 # Find file
