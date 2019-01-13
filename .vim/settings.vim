@@ -1,36 +1,35 @@
-
 set clipboard^=unnamed,unnamedplus
 set shell=zsh
-set nocompatible                    " Use Vim settings, rather then Vi settings. It’s important to have this on
+set nocompatible
 set autoindent
-set wildmode=list:longest,full      " Command line completion.
+set wildmode=list:longest,full
 set wildmenu
-set showcmd                         " Show keystrokes
+set showcmd
 set title
-set tabline=%!MyTabLine()           " Using Tabline function
-set showtabline=2                   " Showing tabline always. 0 means never.
-set modeline                        " enable vim modelines
-set clipboard^=unnamedplus          " system clipboard (requires +clipboard)
+set tabline=%!MyTabLine()
+set showtabline=2
+set modeline
+set clipboard^=unnamedplus
 set relativenumber
-set confirm                         " ask confirmation for some things, like save before quit, etc.
-set wildmenu                        " Tab completion menu when using command mode
-set expandtab                       " Tab key inserts spaces not tabs
-set tabstop=4                       " number of visual spaces per TAB
-set softtabstop=4                   " spaces to enter for each tab
-set expandtab                       " tabs are spaces
-set cursorline                      " highlight current line
-set shiftwidth=4                    " amount of spaces for indentation
-set shortmess+=aAcIws               " Hide or shorten certain messages
+set confirm
+set wildmenu
+set expandtab
+set tabstop=4
+set softtabstop=4
+set expandtab
+set cursorline
+set shiftwidth=4
+set shortmess+=aAcIws
 set incsearch
-set ignorecase                      " Ignore case sensitivity
+set ignorecase
 set smartcase
-set laststatus=2                    " Always show statusline. 0 means never
-set directory=$HOME/.vim/swp//      " Directory for swap files
-set directory=$HOME/.vim/backup//   " Directory for backup files
-set undodir=$HOME/.vim/undodir//    " Directory for undodir files
-set lazyredraw                      " redraw only when we need to.
-set foldlevelstart=99               " open most folds by default
-set foldmethod=manual               " fold based on... 
+set laststatus=2
+set directory=$HOME/.vim/swp//
+set directory=$HOME/.vim/backup//
+set undodir=$HOME/.vim/undodir//
+set lazyredraw
+set foldlevelstart=99
+set foldmethod=manual
 set statusline =%#function#>>>
 set statusline +=\ %#function#\ %F
 set statusline +=\ %#identifier#\::\ %m\ %r\ %h\ %w\ %{strftime('%c')}%=
@@ -48,5 +47,5 @@ set statusline +=\ %c
 set statusline +=\ <<<
 set mouse=a
 set linebreak breakindent
-set list listchars
+" set list listchars
 
