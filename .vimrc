@@ -19,12 +19,6 @@ let g:netrw_altv = 1
 let g:netrw_liststyle = 3
 let g:netrw_browse_split = 3
 
-" ------ leader mapping ------
-
-let g:mapleader = "\<Space>"
-
-" ------ enable additional features ------
-
 " enable mouse
 if has('mouse_sgr')
     " sgr mouse is better but not every term supports it
@@ -53,7 +47,7 @@ if $TERM !=? 'linux'
     endif
 
     if has('multi_byte') && $TERM !=? 'linux'
-        set listchars=tab:»»,trail:•
+        set listchars=tab:»-,trail:•
         set fillchars=vert:┃ showbreak=↪
     endif
 endif

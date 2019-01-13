@@ -1,3 +1,9 @@
+" ------ leader mapping ------
+
+let g:mapleader = "\<Space>"
+
+" ------ enable additional features ------
+
 " ------ basic maps ------
 
 inoremap <silent><C-v> <Esc>:set paste<CR>a<C-r>+<Esc>:set nopaste<CR>a
@@ -28,18 +34,19 @@ nnoremap <silent> <Leader>n :tabnew<CR>
 nnoremap <silent> <C-k> :tabnext<CR>
 nnoremap <silent> <C-f> :tabfirst<CR>
 nnoremap <silent> <C-j> :tabprevious<CR>
-nnoremap <Leader>w :w<CR>                                                              " Save
-nnoremap <Leader>ws :mks! vimconfsession.vim<CR>                                       " Save session
-nnoremap <Leader>wa :wa<CR>                                                            " Save all window
-nnoremap <Leader>h :set hlsearch!<CR>                                                  " Toggle hlsearch
-nnoremap <Leader>a :ab<CR>                                                             " Show abbreviations
-nnoremap <Leader>b :ls<CR>                                                             " Show buffers
-nnoremap <Leader>m :marks<CR>                                                          " Show marks
-nnoremap <Leader>r :reg<CR>                                                            " Show registers
-map <Leader>c :                                                                        " Get command line
-nnoremap <Leader>l :source $MYVIMRC<CR>                                                " Source vimrc
-nnoremap <silent> <Leader>q :q<CR>                                                     " Quit window
-nnoremap <silent> <Leader>qa :qa<CR>                                                   " Quit all window
+nnoremap <Leader>w :w<CR>
+nnoremap <Leader>ws :mks! vimconfsession.vim<CR>
+nnoremap <Leader>wa :wa<CR>
+nnoremap <Leader>h :set hlsearch!<CR>
+
+nnoremap <Leader>a :ab<CR>
+nnoremap <Leader>b :ls<CR>
+nnoremap <Leader>m :marks<CR>
+nnoremap <Leader>r :reg<CR>
+map <Leader>c :
+nnoremap <Leader>l :source $MYVIMRC<CR>
+nnoremap <silent> <Leader>q :q<CR>
+nnoremap <silent> <Leader>qa :qa<CR>
 " open a new tab in the current directory with netrw
 nnoremap <silent> <Leader>o :tabedit <C-R>=expand("%:p:h")<CR><CR>
 " split the window vertically and horizontally
@@ -57,7 +64,7 @@ nnoremap <silent> <Leader>ss
     \  unlet b:_p <CR>
 
 " open ranger as a file chooser using the function below
-" nnoremap <leader>r :call <SID>ranger()<CR>
+" noremap <leader>r :call <SID>ranger()<CR>
 
 " match string to switch buffer
 " nnoremap <Leader>b :let b:buf = input('Match: ')<Bar>call <SID>bufferselect(b:buf)<CR>
