@@ -88,5 +88,11 @@ Others:
     :sort! ui '>>>' Sort descending order(!), removes duplicates(u), ignores case(i)
     autocmd {event} {pattern} {cmd}
     [I '>>>' List all occurences of the word under the cursor in a window
-
+    vim --startuptime startuptime.log
+    Start Vim as usual, and execute the following set of commands:
+        :profile start profile.log
+        :profile func *
+        :profile file *
+    quit Vim, Open profile.log , set foldmethod=indent , as the file is large and hard to navigate
+    <C-z> '>>>' suspend vim and go back to terminal, fg '>>>' go back to vim
     {"DEFAULT": "https://www.google.com/search?hl=en&q={}"}

@@ -1,35 +1,38 @@
-set clipboard^=unnamed,unnamedplus
-set shell=zsh
-set nocompatible
 set autoindent
-set wildmode=list:longest,full
-set wildmenu
-set showcmd
-set title
-set tabline=%!MyTabLine()
-set showtabline=2
-set modeline
-set clipboard^=unnamedplus
-set relativenumber
+set clipboard^=unnamed,unnamedplus
 set confirm
-set wildmenu
-set expandtab
-set tabstop=4
-set softtabstop=4
-set expandtab
 set cursorline
-set shiftwidth=4
-set shortmess+=aAcIws
-set incsearch
-set ignorecase
-set smartcase
-set laststatus=2
-set directory=$HOME/.vim/swp//
 set directory=$HOME/.vim/backup//
-set undodir=$HOME/.vim/undodir//
-set lazyredraw
+set directory=$HOME/.vim/swp//
+set expandtab
+set expandtab
 set foldlevelstart=99
 set foldmethod=manual
+set ignorecase
+set incsearch
+set laststatus=2
+set lazyredraw
+set linebreak 
+set breakindent
+set modeline
+set mouse=a
+set nocompatible
+set relativenumber
+set shell=zsh
+set shiftwidth=4
+set shortmess+=aAcIws
+set showcmd
+set showtabline=2
+set smartcase
+set softtabstop=4
+set tabline=%!MyTabLine()
+set tabstop=4
+set thesaurus+=$HOME/.vim/thesaurus/thesaurus.txt
+set title
+set undodir=$HOME/.vim/undodir//
+set wildmenu
+set wildmenu
+set wildmode=list:longest,full
 set statusline =%#function#>>>
 set statusline +=\ %#function#\ %F
 set statusline +=\ %#identifier#\::\ %m\ %r\ %h\ %w\ %{strftime('%c')}%=
@@ -45,7 +48,4 @@ set statusline +=\ \|
 set statusline +=%#function#\ column:
 set statusline +=\ %c
 set statusline +=\ <<<
-set mouse=a
-set linebreak breakindent
-" set list listchars
 

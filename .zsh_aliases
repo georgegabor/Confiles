@@ -91,7 +91,7 @@ function backup_Compaq()
             cp -v $HOME/.config/qutebrowser/quickmarks $HOME/.backup
             cp -v $HOME/.vim/abbreviations.vim $HOME/.backup/.vim/
             cp -v -r $HOME/.config/openbox $HOME/.config/compaqconfiles
-            cp -v -r $HOME/.config/polybar $HOME/.config/compaqconfiles
+            p -v -r $HOME/.config/polybar $HOME/.config/compaqconfiles
         }
 
 # Find file

@@ -6,6 +6,16 @@ let g:mapleader = "\<Space>"
 
 " ------ basic maps ------
 
+inoremap ' ''<esc>i
+inoremap " ""<esc>i
+inoremap ( ()<esc>i
+inoremap { {}<esc>i
+inoremap [ []<esc>i
+cnoremap ' ''<left>
+cnoremap " ""<left>
+cnoremap ( ()<left>
+cnoremap { {}<left>
+cnoremap [ []<left>
 inoremap <silent><C-v> <Esc>:set paste<CR>a<C-r>+<Esc>:set nopaste<CR>a
 " alt defaults
 nnoremap 0 ^

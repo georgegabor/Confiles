@@ -7,7 +7,8 @@ source $HOME/.vim/settings.vim
 source $HOME/.vim/keymappings.vim
 source $HOME/.vim/abbreviations.vim
 
-filetype indent on                  " load filetype-specific indent files
+" load filetype-specific indent files
+filetype indent on
 
 " Save folding
 " augroup QuickNotes
