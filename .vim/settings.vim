@@ -1,4 +1,5 @@
 set autoindent
+set breakindent
 set clipboard^=unnamed,unnamedplus
 set confirm
 set cursorline
@@ -13,26 +14,26 @@ set incsearch
 set laststatus=2
 set lazyredraw
 set linebreak 
-set breakindent
 set modeline
 set mouse=a
+set nowrapscan
 set nocompatible
 set relativenumber
 set shell=zsh
-set shiftwidth=4
+set shiftwidth=2
 set shortmess+=aAcIws
 set showcmd
 set showtabline=2
 set smartcase
-set softtabstop=4
+set softtabstop=2
 set tabline=%!MyTabLine()
-set tabstop=4
+set tabstop=2
 set thesaurus+=$HOME/.vim/thesaurus/thesaurus.txt
 set title
 set undodir=$HOME/.vim/undodir//
 set wildmenu
-set wildmenu
 set wildmode=list:longest,full
+
 set statusline =%#function#>>>
 set statusline +=\ %#function#\ %F
 set statusline +=\ %#identifier#\::\ %m\ %r\ %h\ %w\ %{strftime('%c')}%=

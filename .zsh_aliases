@@ -75,7 +75,7 @@ function backup_Asus()
             cp -v $HOME/.zsh_aliases $HOME/.backup
             cp -v $HOME/vimhelp.yaml $HOME/.backup
             cp -v $HOME/.config/qutebrowser/quickmarks $HOME/.backup
-            cp -v $HOME/.vim/abbreviations.vim $HOME/.backup/.vim/
+            cp -v -r $HOME/.vim/abbreviations.vim $HOME/.backup/.vim/
             cp -v -r $HOME/.config/openbox $HOME/.config/asusconfiles
             cp -v -r $HOME/.config/polybar $HOME/.config/asusconfiles
         }

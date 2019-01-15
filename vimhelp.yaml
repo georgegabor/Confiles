@@ -95,4 +95,6 @@ Others:
         :profile file *
     quit Vim, Open profile.log , set foldmethod=indent , as the file is large and hard to navigate
     <C-z> '>>>' suspend vim and go back to terminal, fg '>>>' go back to vim
+    :h ordinary-atom
+    :vimgrep /\<word\>/ '>>>' :copen open the quickfix window, :ccl to close iw
     {"DEFAULT": "https://www.google.com/search?hl=en&q={}"}
