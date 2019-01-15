@@ -6,7 +6,6 @@ set cursorline
 set directory=$HOME/.vim/backup//
 set directory=$HOME/.vim/swp//
 set expandtab
-set expandtab
 set foldlevelstart=99
 set foldmethod=manual
 set ignorecase

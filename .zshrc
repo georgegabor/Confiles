@@ -18,7 +18,7 @@ fi
 
 if [ -f ~/.zsh_aliases ];
 then
-	. ~/.zsh_aliases
+    . ~/.zsh_aliases
 fi
 
 plugins=(
