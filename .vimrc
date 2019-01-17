@@ -6,6 +6,7 @@ runtime! archlinux.vim
 source $HOME/.vim/settings.vim
 source $HOME/.vim/keymappings.vim
 source $HOME/.vim/abbreviations.vim
+source $HOME/.vim/autocommand.vim
 
 " load filetype-specific indent files
 filetype indent on
@@ -48,7 +49,7 @@ if $TERM !=? 'linux'
     endif
 
     if has('multi_byte') && $TERM !=? 'linux'
-        set listchars=tab:»-,trail:•
+        set listchars=tab:»»,trail:•
         set fillchars=vert:┃ showbreak=↪
     endif
 endif

@@ -3,6 +3,19 @@
 let g:mapleader = "\<Space>"
 
 " ------ enable additional features ------
+" Map the alt key,'\e' represents the <esc> key execute "set <M-w>=\ew"
+" or do the for loop with range for a-z
+
+for i in range(97,122)
+  let c = nr2char(i)
+  exec "map \e".c." <M-".c.">"
+  exec "map! \e".c." <M-".c.">"
+endfor
+
+noremap <M-w> :w<CR>
+noremap <M-q> :q<CR>
+noremap <M-a> :
+map! <M-s> <Esc>
 
 " ------ basic maps ------
 
@@ -28,7 +41,7 @@ nnoremap <Tab> ==
 vnoremap > >gv
 vnoremap < <gv
 " toggle showcmd
-nnoremap  <Leader>s :set showcmd!<CR>
+" nnoremap  <Leader>s :set showcmd!<CR>
 " toggle line numbers, nn (no number)
 nnoremap  <Leader>nn :set number!<CR>
 nnoremap  <Leader>rn :set relativenumber!<CR>
@@ -38,8 +51,8 @@ nnoremap <buffer><silent><expr>k v:count ? 'k' : 'gk'
 " open a terminal in $PWD
 nnoremap <silent> <Leader>tt :terminal<CR>
 " tab control
-nnoremap <silent> <S-j> :tabmove -1<CR>
-nnoremap <silent> <S-k> :tabmove +1<CR>
+nnoremap <silent> <C-h> :tabmove -1<CR>
+nnoremap <silent> <C-l> :tabmove +1<CR>
 nnoremap <silent> <Leader>n :tabnew<CR>
 nnoremap <silent> <C-k> :tabnext<CR>
 nnoremap <silent> <C-f> :tabfirst<CR>
@@ -48,20 +61,23 @@ nnoremap <Leader>w :w<CR>
 nnoremap <Leader>ws :mks! vimconfsession.vim<CR>
 nnoremap <Leader>wa :wa<CR>
 nnoremap <Leader>h :set hlsearch!<CR>
-
+nnoremap <Leader>sp :set spell!<CR>
 nnoremap <Leader>a :ab<CR>
 nnoremap <Leader>b :ls<CR>
 nnoremap <Leader>m :marks<CR>
 nnoremap <Leader>r :reg<CR>
-map <Leader>c :
 nnoremap <Leader>l :source $MYVIMRC<CR>
 nnoremap <silent> <Leader>q :q<CR>
 nnoremap <silent> <Leader>qa :qa<CR>
+noremap <silent> H ^
+noremap <silent> L $
+noremap! <silent> H ^
+noremap! <silent> L $
 " open a new tab in the current directory with netrw
 nnoremap <silent> <Leader>o :tabedit <C-R>=expand("%:p:h")<CR><CR>
 " split the window vertically and horizontally
-nnoremap _ <C-W>s<C-W><Down>
-nnoremap <Bar> <C-W>v<C-W><Right>
+" nnoremap _ <C-W>s<C-W><Down>
+" nnoremap <Bar> <C-W>v<C-W><Right>
 " strip trailing whitespace, ss (strip space)
 nnoremap <silent> <Leader>ss
     \ :let b:_p = getpos(".") <Bar>
