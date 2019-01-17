@@ -105,6 +105,7 @@ Others:
     :w !sh '>>>' Sends the entire buffer through the shell like it was a bash script
     :% !sh '>>>' Sends the entire buffer through the shell like it was a bash script, but you can also specify a range to be executed
     gg=G '>>>' Reindent the whole file
+    tab help internal-variables
 
 Comment for different filetypes:
     :autocmd FileType javascript nnoremap <buffer> <localleader>c I//<esc>

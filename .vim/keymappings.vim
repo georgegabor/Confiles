@@ -40,6 +40,10 @@ nnoremap <Tab> ==
 " re-visual text after changing indent
 vnoremap > >gv
 vnoremap < <gv
+" Puts a ; to the end of the line
+nnoremap <Leader>; :normal! mqA;<esc>`q
+vnoremap <Leader>; :normal! mqA;<esc>`q
+vnoremap ŧ :normal! mqA;<esc>`q
 " toggle showcmd
 " nnoremap  <Leader>s :set showcmd!<CR>
 " toggle line numbers, nn (no number)

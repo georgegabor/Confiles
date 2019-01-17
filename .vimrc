@@ -8,14 +8,8 @@ source $HOME/.vim/keymappings.vim
 source $HOME/.vim/abbreviations.vim
 source $HOME/.vim/autocommand.vim
 
-" load filetype-specific indent files
-filetype indent on
-
-" Save folding
-" augroup QuickNotes
-"   au BufWrite,VimLeave * mkview
-"   au BufRead           * silent loadview
-" augroup END
+filetype indent on " load filetype-specific indent files
+syntax enable " syntax highlighting
 
 let g:netrw_altv = 1
 let g:netrw_liststyle = 3
@@ -26,9 +20,6 @@ if has('mouse_sgr')
     " sgr mouse is better but not every term supports it
     set ttymouse=sgr
 endif
-
-" syntax highlighting
-syntax enable
 
 " midnight, night, or day
 let g:jinx_colors = 'midnight'
@@ -41,7 +32,6 @@ endtry
 
 if $TERM !=? 'linux'
     set termguicolors
-
     " true colors in terminals (neovim doesn't need this)
     if !has('nvim') && !($TERM =~? 'xterm' || &term =~? 'xterm')
         let $TERM = 'xterm-256color'

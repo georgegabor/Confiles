@@ -51,7 +51,7 @@ function reb()
     }
 
 # Git status: write the whole output of the 'git status' command into the tempgit file, then display only the modified ones
-function gstat()
+function gitstatus()
     {
         git status > $HOME/.tempgit
         grep -E "modified|new file" $HOME/.tempgit
