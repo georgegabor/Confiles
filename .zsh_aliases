@@ -35,6 +35,12 @@ mag=$'\e[1;35m'
 cyn=$'\e[1;36m'
 end=$'\e[0m'
 
+function emptyTrash()
+    {
+        rm -rvf $HOME/.local/share/Trash/info
+        rm -rvf $HOME/.local/share/Trash/files
+    }
+
 # Reload zshrc, so no need to restart
 function rez()
     {
@@ -51,7 +57,7 @@ function reb()
     }
 
 # Git status: write the whole output of the 'git status' command into the tempgit file, then display only the modified ones
-function gitstatus()
+  function gitstatus()
     {
         git status > $HOME/.tempgit
         grep -E "modified|new file" $HOME/.tempgit

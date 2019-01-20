@@ -1,5 +1,6 @@
 
-abbr US United States
+abbr us United States
 abbr th tab help
-
-iab cmain #include <stdio.h><CR><CR>int main()<CR><Tab>{<CR><CR>}<Up>
+abbr super write !sudo tee %
+iabbr fn function(<Right><Right><CR><Tab>{<CR><CR><Up><Tab>
+abbr cr <CR>

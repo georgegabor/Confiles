@@ -3,6 +3,7 @@
 let g:mapleader = "\<Space>"
 
 " ------ enable additional features ------
+
 " Map the alt key,'\e' represents the <esc> key execute "set <M-w>=\ew"
 " or do the for loop with range for a-z
 
@@ -29,31 +30,20 @@ cnoremap " ""<left>
 cnoremap ( ()<left>
 cnoremap { {}<left>
 cnoremap [ []<left>
-inoremap <silent><C-v> <Esc>:set paste<CR>a<C-r>+<Esc>:set nopaste<CR>a
-" alt defaults
-nnoremap 0 ^
-nnoremap Y y$
-nnoremap n nzzzv
-nnoremap N Nzzzv
-" nnoremap <Tab> ==j
-nnoremap <Tab> ==
-" re-visual text after changing indent
-vnoremap > >gv
-vnoremap < <gv
-" Puts a ; to the end of the line
-nnoremap <Leader>; :normal! mqA;<esc>`q
-vnoremap <Leader>; :normal! mqA;<esc>`q
-vnoremap ŧ :normal! mqA;<esc>`q
-" toggle showcmd
-" nnoremap  <Leader>s :set showcmd!<CR>
+
+" Puts a ;, ., or : to the end of the line(s)
+" Altgr-;
+vnoremap ´ :normal! mqA;<esc>`q
+nnoremap ´ :normal! mqA;<esc>`q
+" Altgr-.
+vnoremap · :normal! mqA.<esc>`q
+nnoremap · :normal! mqA.<esc>`q
+" Altgr-2
+vnoremap ² :normal! mqA:<esc>`q
+nnoremap ² :normal! mqA:<esc>`q
 " toggle line numbers, nn (no number)
 nnoremap  <Leader>nn :set number!<CR>
 nnoremap  <Leader>rn :set relativenumber!<CR>
-" j = gj :: k = gk  while preserving numbered jumps eg. 12j
-nnoremap <buffer><silent><expr>j v:count ? 'j' : 'gj'
-nnoremap <buffer><silent><expr>k v:count ? 'k' : 'gk'
-" open a terminal in $PWD
-nnoremap <silent> <Leader>tt :terminal<CR>
 " tab control
 nnoremap <silent> <C-h> :tabmove -1<CR>
 nnoremap <silent> <C-l> :tabmove +1<CR>
@@ -61,6 +51,7 @@ nnoremap <silent> <Leader>n :tabnew<CR>
 nnoremap <silent> <C-k> :tabnext<CR>
 nnoremap <silent> <C-f> :tabfirst<CR>
 nnoremap <silent> <C-j> :tabprevious<CR>
+
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>ws :mks! vimconfsession.vim<CR>
 nnoremap <Leader>wa :wa<CR>
@@ -73,10 +64,35 @@ nnoremap <Leader>r :reg<CR>
 nnoremap <Leader>l :source $MYVIMRC<CR>
 nnoremap <silent> <Leader>q :q<CR>
 nnoremap <silent> <Leader>qa :qa<CR>
-noremap <silent> H ^
-noremap <silent> L $
-noremap! <silent> H ^
-noremap! <silent> L $
+nnoremap <silent> H ^
+nnoremap <silent> L $
+" Uppercase previous word Altgr-u
+inoremap ↓ <esc>mzgUiw`za
+" Toggle paste
+nnoremap <Leader>p :set paste!<CR>
+" To insert timestamp, press F3.
+nmap <F3> a<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR><Esc>
+imap <F3> <C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR>
+
+" ---------- Default keymaps, nothing to do with me ----------
+
+" j = gj :: k = gk  while preserving numbered jumps eg. 12j
+nnoremap <buffer><silent><expr>j v:count ? 'j' : 'gj'
+nnoremap <buffer><silent><expr>k v:count ? 'k' : 'gk'
+" open a terminal in $PWD
+nnoremap <silent> <Leader>tt :terminal<CR>
+" alt defaults
+inoremap <silent><C-v> <Esc>:set paste<CR>a<C-r>+<Esc>:set nopaste<CR>a
+nnoremap 0 ^
+nnoremap Y y$
+nnoremap n nzzzv
+nnoremap N Nzzzv
+" nnoremap <Tab> ==j
+nnoremap <Tab> ==
+" re-visual text after changing indent
+vnoremap > >gv
+vnoremap < <gv
+
 " open a new tab in the current directory with netrw
 nnoremap <silent> <Leader>o :tabedit <C-R>=expand("%:p:h")<CR><CR>
 " split the window vertically and horizontally
