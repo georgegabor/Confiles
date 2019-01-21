@@ -3,7 +3,7 @@
 let g:mapleader = "\<Space>"
 
 ""-------------------------------------------------- Alt keymappings
-" '\e' represents the <esc> key execute set <M-w>=\ew 
+" '\e' represents the <esc> key execute set <M-w>=\ew
 " or do the for loop with range for a-z
 
 for i in range(97,122)
@@ -14,7 +14,7 @@ endfor
 
 noremap <silent> <M-w> :w<CR>
 noremap <silent> <M-q> :q<CR>
-noremap <silent> <M-a> :
+noremap <M-a> :
 map! <silent> <M-s> <Esc>
 
 "-------------------------------------------------- Brackets, parantheses, quotes, singlequotes
