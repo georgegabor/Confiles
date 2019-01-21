@@ -13,11 +13,12 @@ set ignorecase
 set incsearch
 set laststatus=2
 set lazyredraw
-set linebreak 
+set linebreak
 set modeline
 set mouse=a
 set nowrapscan
-set nocompatible
+" set nocompatible
+set paste
 set relativenumber
 set ruler
 set shell=zsh

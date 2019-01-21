@@ -1,6 +1,7 @@
-" Sane vim defaults for ArchLabs
+"------------------------------ Sane vim defaults for ArchLabs
 
-" Arch defaults
+"------------------------------ Arch defaults
+
 runtime! archlinux.vim
 
 source $HOME/.vim/settings.vim
@@ -15,13 +16,15 @@ let g:netrw_altv = 1
 let g:netrw_liststyle = 3
 let g:netrw_browse_split = 3
 
-" enable mouse
+"------------------------------ enable mouse
+
 if has('mouse_sgr')
     " sgr mouse is better but not every term supports it
     set ttymouse=sgr
 endif
 
-" midnight, night, or day
+"------------------------------ midnight, night, or day
+
 let g:jinx_colors = 'midnight'
 
 try
@@ -44,7 +47,8 @@ if $TERM !=? 'linux'
     endif
 endif
 
-" change cursor shape for different editing modes, neovim does this by default
+"------------------------------ change cursor shape for different editing modes, neovim does this by default
+
 if !has('nvim')
     if exists('$TMUX')
         let &t_SI = "\<Esc>Ptmux;\<Esc>\e[5 q\<Esc>\\"
@@ -57,7 +61,7 @@ if !has('nvim')
     endif
 endif
 
-" ------ commands ------
+"------------------------------ commands
 
 command! D Explore
 command! R call <SID>ranger()
@@ -65,7 +69,7 @@ command! Q call <SID>quitbuffer()
 command! -nargs=1 B :call <SID>bufferselect("<args>")
 command! W execute 'silent w !sudo tee % >/dev/null' | edit!
 
-" ------ autocmd ------
+"------------------------------ autocmd 
 
 let g:lasttab = 1
 augroup save_last_tab
@@ -73,21 +77,21 @@ augroup save_last_tab
     autocmd TabLeave * let g:lasttab = tabpagenr()
 augroup END
 
-" Reload changes if file changed outside of vim requires autoread
+""""""" Reload changes if file changed outside of vim requires autoread
 augroup load_changed_file
     autocmd!
     autocmd FocusGained,BufEnter * if mode() !=? 'c' | checktime | endif
     autocmd FileChangedShellPost * echo "Changes loaded from source file"
 augroup END
 
-" when quitting a file, save the cursor position
+"""""" when quitting a file, save the cursor position
 augroup save_cursor_position
     autocmd!
     autocmd BufReadPost * call setpos(".", getpos("'\""))
 augroup END
 
-" when not running in a console or a terminal that doesn't support 256 colors
-" enable cursorline in the currently active window and disable it in inactive ones
+"""""" when not running in a console or a terminal that doesn't support 256 colors
+"""""" enable cursorline in the currently active window and disable it in inactive ones
 if $DISPLAY !=? '' && &t_Co == 256
     augroup cursorline
         autocmd!
@@ -96,7 +100,7 @@ if $DISPLAY !=? '' && &t_Co == 256
     augroup END
 endif
 
-" ------ adv maps ------
+"------------------------------ adv maps 
 
 " global replace
 vnoremap <Leader>sw "hy
@@ -273,7 +277,7 @@ if exists("+showtabline")
              let s .= (i == t ? '%1*' : '%2*')
              let s .= '  '
              let s .= (i == t ? '%#TabLineSel#' : '%#javascriptNull#')
-             let s .= i . ')'
+             let s .= '('. i . ')'
              let s .= '%*'
              let s .= '%#Operator#'
              let s .= ' '

@@ -1,9 +1,9 @@
-""-------------------------------------------------- Leader mapping ------
+"--------------------------------------------------- Leader mapping
 
 let g:mapleader = "\<Space>"
 
-""-------------------------------------------------- Alt keymappings
-" '\e' represents the <esc> key execute set <M-w>=\ew
+"--------------------------------------------------- Alt keymappings
+" '\e' represents the <esc> key: execute set <M-w>=\ew
 " or do the for loop with range for a-z
 
 for i in range(97,122)
@@ -19,19 +19,18 @@ map! <silent> <M-s> <Esc>
 
 "-------------------------------------------------- Brackets, parantheses, quotes, singlequotes
 
-inoremap ' ''<esc>i
-inoremap " ""<esc>i
-inoremap ( ()<esc>i
-inoremap { {}<esc>i
-inoremap [ []<esc>i
-cnoremap ' ''<left>
-cnoremap " ""<left>
-cnoremap ( ()<left>
-cnoremap { {}<left>
-cnoremap [ []<left>
+inoremap  '  ''<left>
+" inoremap  "<left>
+inoremap  (  ()<left>
+inoremap  {  {}<left>
+inoremap  [  []<left>
+cnoremap  '  ''<left>
+cnoremap  "  ""<left>
+cnoremap  (  ()<left>
+cnoremap  {  {}<left>
+cnoremap  [  []<left>
 
 "-------------------------------------------------- Alt-gr keymappings
-"
 "Puts a semicolon, a colon or a dot at the end of the line(s)
 " <Altgr-;>
 vnoremap ´ :normal! mqA;<esc>`q
@@ -82,7 +81,7 @@ nnoremap <Leader>p :set paste!<CR>
 nmap <F3> a<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR><Esc>
 imap <F3> <C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR>
 
-"--------------------------------------------------------------------------------------------------------------------------------------------------
+"-------------------------------------------------------------------------------------------------------------------------------------------
 "-------------------------------------------------- Default keymaps, nothing to do with me ----------
 
 " j = gj :: k = gk  while preserving numbered jumps eg. 12j

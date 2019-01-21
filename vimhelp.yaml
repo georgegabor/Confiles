@@ -41,7 +41,7 @@ Visual:
     Ctrl-V + select the columns + g + Ctrl-A or Ctrl-X  '>>>' Increment or decrement numbers verticaly RELATIVE !!! to each other
     :5,10w newfilename '>>>' Copy selected lines to another file
     :g/pattern/ .w>>filename '>>>' Select pattern and write into file
-    Align columns using terminal commands '>>>' Visually select the lines then <'>':! column -t -o ' '. -o is to define the delimiter, 
+    Align columns using terminal commands '>>>' Visually select the lines then <'>':! column -t -o ' '. -o is to define the delimiter,
     in this case it's a whitespace
 
 Auto-completion:
@@ -101,7 +101,7 @@ Others:
     :vimgrep /\<word\>/ '>>>' :copen open the quickfix window, :ccl to close iw
     :tab help holy-grail '>>>' to see all Ex-command commands
     :scriptnames '>>>' list all loaded scripts
-    :set spell then type z= (cursor on the word) 
+    :set spell then type z= (cursor on the word)
     :w !sh '>>>' Sends the entire buffer through the shell like it was a bash script
     :% !sh '>>>' Sends the entire buffer through the shell like it was a bash script, but you can also specify a range to be executed
     gg=G '>>>' Reindent the whole file

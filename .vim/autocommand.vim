@@ -1,5 +1,14 @@
-:autocmd FileType javascript nnoremap <buffer> <C-c> I//<esc>
-:autocmd FileType python nnoremap <buffer> <C-c> I#<esc>
+augroup CommentOut
+    autocmd! FileType javascript nnoremap <buffer> <C-c> mzI// <esc>`z
+    autocmd! FileType python nnoremap <buffer> <C-c> mzI# <esc>`z
+    autocmd! FileType vim nnoremap <buffer> <C-c> mzI" <esc>`z
+augroup END
+
+augroup RemoveComment
+    autocmd! FileType javascript nnoremap <buffer> ¢ mz0xx`z<esc>
+    autocmd! FileType python nnoremap <buffer>  ¢ mz0xx`z<esc>
+    autocmd! FileType vim nnoremap <buffer>  ¢ mz0xx`z<esc>
+augroup END
 
 " Save folding
 " augroup QuickNotes
@@ -14,4 +23,11 @@
 " For example, if you added the template above then invoked Vim with vim
 " page.html, the XHTML above would be inserted into the page.html file
 " automatically.
+"
+" :filetype on
+" :autocmd FileType c,cpp :set cindent
+" :autocmd BufRead
+" :autocmd BufRead *.cpp :set filetype=c
+" :autocmd BufRead *.html :set filetype=html
+" Any other filetypes, set to text* :setfiletype text
 
