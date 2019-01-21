@@ -75,35 +75,17 @@ function gitup()
 # Copy config files
 function backup_Asus()
         {
-            cp -v $HOME/.zsh_history $HOME/.backup
-            cp -v $HOME/.vimrc $HOME/.backup
-            cp -v $HOME/.zshrc $HOME/.backup
-            cp -v $HOME/.zsh_aliases $HOME/.backup
-            cp -v $HOME/vimhelp.yaml $HOME/.backup
-            cp -v $HOME/.config/qutebrowser/quickmarks $HOME/.backup
-            cp -v -r $HOME/.vim/abbreviations.vim $HOME/.backup/.vim/
-            cp -v -r $HOME/.vim/keymappings.vim $HOME/.backup/.vim/
-            cp -v -r $HOME/.vim/settings.vim $HOME/.backup/.vim/
-            cp -v -r $HOME/.vim/thesaurus.txt $HOME/.backup/.vim/
             cp -v -r $HOME/.config/openbox $HOME/.config/asusconfiles
             cp -v -r $HOME/.config/polybar $HOME/.config/asusconfiles
+            cp -v $HOME/.config/dunst/dunstrc $HOME/.config/asusconfiles
         }
 
 # Copy config files
 function backup_Compaq()
         {
-            cp -v $HOME/.zsh_history $HOME/.backup
-            cp -v $HOME/.vimrc $HOME/.backup
-            cp -v $HOME/.zshrc $HOME/.backup
-            cp -v $HOME/.zsh_aliases $HOME/.backup
-            cp -v $HOME/vimhelp.yaml $HOME/.backup
-            cp -v $HOME/.config/qutebrowser/quickmarks $HOME/.backup
-            cp -v -r $HOME/.vim/keymappings.vim $HOME/.backup/.vim/
-            cp -v -r $HOME/.vim/settings.vim $HOME/.backup/.vim/
-            cp -v -r $HOME/.vim/thesaurus.txt $HOME/.backup/.vim/
-            cp -v -r $HOME/.vim/abbreviations.vim $HOME/.backup/.vim/
             cp -v -r $HOME/.config/openbox $HOME/.config/compaqconfiles
             cp -v -r $HOME/.config/polybar $HOME/.config/compaqconfiles
+            cp -v $HOME/.config/dunst/dunstrc $HOME/.config/compaqconfiles
         }
 
 # Find file
