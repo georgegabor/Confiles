@@ -106,6 +106,7 @@ Others:
     :% !sh '>>>' Sends the entire buffer through the shell like it was a bash script, but you can also specify a range to be executed
     gg=G '>>>' Reindent the whole file
     tab help internal-variables
+    :dig[raphs] '>>>' Special characters: Press C-k in insert mode then the combination
 
 Comment for different filetypes:
     :autocmd FileType javascript nnoremap <buffer> <localleader>c I//<esc>

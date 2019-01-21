@@ -1,10 +1,9 @@
-" ------ leader mapping ------
+""-------------------------------------------------- Leader mapping ------
 
 let g:mapleader = "\<Space>"
 
-" ------ enable additional features ------
-
-" Map the alt key,'\e' represents the <esc> key execute "set <M-w>=\ew"
+""-------------------------------------------------- Alt keymappings
+" '\e' represents the <esc> key execute set <M-w>=\ew 
 " or do the for loop with range for a-z
 
 for i in range(97,122)
@@ -13,12 +12,12 @@ for i in range(97,122)
   exec "map! \e".c." <M-".c.">"
 endfor
 
-noremap <M-w> :w<CR>
-noremap <M-q> :q<CR>
-noremap <M-a> :
-map! <M-s> <Esc>
+noremap <silent> <M-w> :w<CR>
+noremap <silent> <M-q> :q<CR>
+noremap <silent> <M-a> :
+map! <silent> <M-s> <Esc>
 
-" ------ basic maps ------
+"-------------------------------------------------- Brackets, parantheses, quotes, singlequotes
 
 inoremap ' ''<esc>i
 inoremap " ""<esc>i
@@ -31,50 +30,60 @@ cnoremap ( ()<left>
 cnoremap { {}<left>
 cnoremap [ []<left>
 
-" Puts a ;, ., or : to the end of the line(s)
-" Altgr-;
+"-------------------------------------------------- Alt-gr keymappings
+"
+"Puts a semicolon, a colon or a dot at the end of the line(s)
+" <Altgr-;>
 vnoremap ´ :normal! mqA;<esc>`q
 nnoremap ´ :normal! mqA;<esc>`q
-" Altgr-.
+" <Altgr-.>
 vnoremap · :normal! mqA.<esc>`q
 nnoremap · :normal! mqA.<esc>`q
-" Altgr-2
+" <Altgr-2>
 vnoremap ² :normal! mqA:<esc>`q
 nnoremap ² :normal! mqA:<esc>`q
-" toggle line numbers, nn (no number)
-nnoremap  <Leader>nn :set number!<CR>
-nnoremap  <Leader>rn :set relativenumber!<CR>
-" tab control
+" <Altgr-u> Uppercasing the word behind the cursor
+inoremap ↓ <esc>mzgUiw`za
+
+"-------------------------------------------------- Toggle line numbers
+
+nnoremap  <silent> <Leader>nn :set number!<CR>
+nnoremap  <silent> <Leader>rn :set relativenumber!<CR>
+
+"-------------------------------------------------- Tab control
+
 nnoremap <silent> <C-h> :tabmove -1<CR>
 nnoremap <silent> <C-l> :tabmove +1<CR>
-nnoremap <silent> <Leader>n :tabnew<CR>
+nnoremap <silent> <C-n> :tabnew<CR>
 nnoremap <silent> <C-k> :tabnext<CR>
 nnoremap <silent> <C-f> :tabfirst<CR>
 nnoremap <silent> <C-j> :tabprevious<CR>
 
-nnoremap <Leader>w :w<CR>
+"-------------------------------------------------- Leader keymappings
+
+nnoremap <silent> <Leader>w :w<CR>
 nnoremap <Leader>ws :mks! vimconfsession.vim<CR>
 nnoremap <Leader>wa :wa<CR>
-nnoremap <Leader>h :set hlsearch!<CR>
+nnoremap <silent> <Leader>h :set hlsearch!<CR>
 nnoremap <Leader>sp :set spell!<CR>
-nnoremap <Leader>a :ab<CR>
-nnoremap <Leader>b :ls<CR>
-nnoremap <Leader>m :marks<CR>
-nnoremap <Leader>r :reg<CR>
+nnoremap <silent> <Leader>a :ab<CR>
+nnoremap <silent> <Leader>b :ls<CR>
+nnoremap <silent> <Leader>m :marks<CR>
+nnoremap <silent> <Leader>r :reg<CR>
 nnoremap <Leader>l :source $MYVIMRC<CR>
 nnoremap <silent> <Leader>q :q<CR>
 nnoremap <silent> <Leader>qa :qa<CR>
 nnoremap <silent> H ^
 nnoremap <silent> L $
-" Uppercase previous word Altgr-u
-inoremap ↓ <esc>mzgUiw`za
-" Toggle paste
 nnoremap <Leader>p :set paste!<CR>
-" To insert timestamp, press F3.
+
+"--------------------------------------------------  To insert timestamp, press F3.
+
 nmap <F3> a<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR><Esc>
 imap <F3> <C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR>
 
-" ---------- Default keymaps, nothing to do with me ----------
+"--------------------------------------------------------------------------------------------------------------------------------------------------
+"-------------------------------------------------- Default keymaps, nothing to do with me ----------
 
 " j = gj :: k = gk  while preserving numbered jumps eg. 12j
 nnoremap <buffer><silent><expr>j v:count ? 'j' : 'gj'
