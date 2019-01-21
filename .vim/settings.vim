@@ -30,6 +30,7 @@ set smartcase
 set smartindent
 set smarttab
 set softtabstop=4
+set stal=2
 set tabline=%!MyTabLine()
 set tabstop=4
 set thesaurus+=$HOME/.vim/thesaurus/thesaurus.txt

@@ -225,38 +225,68 @@ function! <SID>ranger()
     redraw!
 endfunction
 
-function! MyTabLine()
-      let s = ''
-      for i in range(tabpagenr('$'))
-        " select the highlighting
-        if i + 1 == tabpagenr()
-          "let s .= '%#TabLineSel#'
-          let s .= '%#TabLineSel#'
-        else
-          let s .= '%#TabLine#'
-        endif
+""function! MyTabLine()
+""      let s = ''
+""      for i in range(tabpagenr('$'))
+""        " select the highlighting
+""        if i + 1 == tabpagenr()
+""          "let s .= '%#TabLineSel#'
+""          let s .= '%#TabLineSel#'
+""        else
+""          let s .= '%#TabLine#'
+""        endif
+""
+""        " set the tab page number (for mouse clicks)
+""        " let s .= '%' . (i + 1) . 'T'
+""
+""        " the label is made by MyTabLabel()
+""        let s .= ' %{MyTabLabel(' . (i + 1) . ')} '
+""      endfor
+""
+""      " after the last tab fill with TabLineFill and reset tab page nr
+""      let s .= '%#TabLineFill#%T'
+""
+""      " right-align the label to close the current tab page
+""      if tabpagenr('$') > 1
+""        let s .= '%=%#TabLine#%999Xclose'
+""      endif
+""
+""      return s
+""endfunction
+""
+""function! MyTabLabel(n)
+""      let buflist = tabpagebuflist(a:n)
+""      let winnr = tabpagewinnr(a:n)
+""      return buflist[winnr - 1] . ') ' . bufname(buflist[winnr - 1])
+""      " return bufname(buflist[winnr - 1]) . ') ' . buflist[winnr - 1]
+""endfunction
 
-        " set the tab page number (for mouse clicks)
-        " let s .= '%' . (i + 1) . 'T'
-
-        " the label is made by MyTabLabel()
-        let s .= ' %{MyTabLabel(' . (i + 1) . ')} '
-      endfor
-
-      " after the last tab fill with TabLineFill and reset tab page nr
-      let s .= '%#TabLineFill#%T'
-
-      " right-align the label to close the current tab page
-      if tabpagenr('$') > 1
-        let s .= '%=%#TabLine#%999Xclose'
-      endif
-
-      return s
-endfunction
-
-function! MyTabLabel(n)
-      let buflist = tabpagebuflist(a:n)
-      let winnr = tabpagewinnr(a:n)
-      return buflist[winnr - 1] . ') ' . bufname(buflist[winnr - 1])
-      " return bufname(buflist[winnr - 1]) . ') ' . buflist[winnr - 1]
-endfunction
+if exists("+showtabline")
+     function! MyTabLine()
+         let s = ''
+         let t = tabpagenr()
+         let i = 1
+         while i <= tabpagenr('$')
+             let buflist = tabpagebuflist(i)
+             let winnr = tabpagewinnr(i)
+             let s .= '%' . i . 'T'
+             let s .= (i == t ? '%1*' : '%2*')
+             let s .= '  '
+             let s .= (i == t ? '%#TabLineSel#' : '%#javascriptNull#')
+             let s .= i . ')'
+             let s .= '%*'
+             let s .= '%#Operator#'
+             let s .= ' '
+             let file = bufname(buflist[winnr - 1])
+             let file = fnamemodify(file, ':p:t')
+             if file == ''
+                 let file = '[No Name]'
+             endif
+             let s .= file
+             let i = i + 1
+         endwhile
+         let s .= '%T%#TabLineFill#%='
+         let s .= (tabpagenr('$') > 1 ? '%999XX' : 'X')
+         return s
+     endfunction
+endif

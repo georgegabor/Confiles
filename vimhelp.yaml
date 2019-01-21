@@ -107,6 +107,8 @@ Others:
     gg=G '>>>' Reindent the whole file
     tab help internal-variables
     :dig[raphs] '>>>' Special characters: Press C-k in insert mode then the combination
+    :hi[light]
+    :match error /word/ '>>>' match the word with the error highlight, can use 2match and 3match, so 3 different word
 
 Comment for different filetypes:
     :autocmd FileType javascript nnoremap <buffer> <localleader>c I//<esc>
