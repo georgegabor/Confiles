@@ -15,6 +15,7 @@ endfor
 noremap <silent> <M-w> :w<CR>
 noremap <silent> <M-q> :q<CR>
 noremap <M-a> :
+noremap <M-l> :source $MYVIMRC<CR>
 map! <silent> <M-s> <Esc>
 
 "-------------------------------------------------- Brackets, parantheses, quotes, singlequotes
@@ -24,11 +25,13 @@ inoremap  "  ""<left>
 inoremap  (  ()<left>
 inoremap  {  {}<left>
 inoremap  [  []<left>
+inoremap  <  <><left>
 cnoremap  '  ''<left>
 cnoremap  "  ""<left>
 cnoremap  (  ()<left>
 cnoremap  {  {}<left>
 cnoremap  [  []<left>
+cnoremap  <  <><left>
 
 " Puts either signs around a WORD
 nnoremap  pa'  Bi'<Esc>Ea'<Esc>
@@ -46,6 +49,7 @@ vnoremap  pa{  c{<Esc>p<Esc>a}<Esc>
 vnoremap  pa[  c[<Esc>p<Esc>a]<Esc>
 vnoremap  pa<  c<<Esc>p<Esc>a><Esc>
 
+
 "-------------------------------------------------- Alt-gr keymappings
 "Puts a semicolon, a colon or a dot at the end of the line(s)
 " <Altgr-;>
@@ -57,6 +61,7 @@ nnoremap · :normal! mqA.<esc>`q
 " <Altgr-2>
 vnoremap ² :normal! mqA:<esc>`q
 nnoremap ² :normal! mqA:<esc>`q
+
 " <Altgr-u> Uppercasing the word behind the cursor
 inoremap ↓ <esc>mzgUiw`za
 
@@ -76,7 +81,6 @@ nnoremap <silent> <C-j> :tabprevious<CR>
 
 "-------------------------------------------------- Leader keymappings
 
-nnoremap <silent> <Leader>w :w<CR>
 nnoremap <Leader>ws :mks! vimconfsession.vim<CR>
 nnoremap <Leader>wa :wa<CR>
 nnoremap <silent> <Leader>h :set hlsearch!<CR>
@@ -85,17 +89,25 @@ nnoremap <silent> <Leader>a :ab<CR>
 nnoremap <silent> <Leader>b :ls<CR>
 nnoremap <silent> <Leader>m :marks<CR>
 nnoremap <silent> <Leader>r :reg<CR>
-nnoremap <Leader>l :source $MYVIMRC<CR>
-nnoremap <silent> <Leader>q :q<CR>
 nnoremap <silent> <Leader>qa :qa<CR>
 nnoremap <silent> H ^
 nnoremap <silent> L $
 nnoremap <Leader>p :set paste!<CR>
 
-"--------------------------------------------------  To insert timestamp, press F3.
+"-------------------------------------------------- Other custom keymappings 
 
+" To insert timestamp, press F3.
 nmap <F3> a<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR><Esc>
 imap <F3> <C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR>
+
+" Put a newline
+nnoremap pl :<C-U>exe "normal mz" . v:count1 . "o<C-V><Esc>`z"<CR>
+
+" Backspace as X
+nnoremap <BS> X
+
+" Tab as indent in Normal mode
+nnoremap in >>
 
 "-------------------------------------------------------------------------------------------------------------------------------------------
 "-------------------------------------------------- Default keymaps, nothing to do with me ----------

@@ -79,6 +79,10 @@ Replacing/Substituting:
     and adds 1 to it
     :%s/\.\s*\w/\=toupper(submatch(0))/g '>>>' Capitalizing the first character of every sentence.
     :%s/\v([^,]*), (.*)$/\2, \1 '>>>' '.'=any character, '*'=zero or more times, ', '=literal char comma+space
+    '\s*'=any number of spaces
+    '\d+'=one or more digits
+    '[\]:.)}\t ]\s*'=any one of the character ]:.)}<tab> <spaces> followed by a bunch of spaces.
+
 Command:
     write !sudo tee %  '>>>' Save file as root
 
@@ -111,6 +115,7 @@ Others:
     :match error /word/ '>>>' match the word with the error highlight, can use 2match and 3match, so 3 different word
     :scr or scriptnames '>>>' Lists the loaded scripts
     :map '>>>' Shows keymappings
+    :map <buffer> '>>>' Shows keymappings for buffer
 
 Comment for different filetypes:
     :autocmd FileType javascript nnoremap <buffer> <localleader>c I//<esc>
