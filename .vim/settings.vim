@@ -18,7 +18,7 @@ set modeline
 set mouse=a
 set nowrapscan
 " set nocompatible
-set paste
+" set paste
 set relativenumber
 set ruler
 set shell=zsh

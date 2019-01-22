@@ -18,9 +18,9 @@ noremap <M-a> :
 map! <silent> <M-s> <Esc>
 
 "-------------------------------------------------- Brackets, parantheses, quotes, singlequotes
-
+" Puts 2 signs instead of one
 inoremap  '  ''<left>
-" inoremap  "<left>
+inoremap  "  ""<left>
 inoremap  (  ()<left>
 inoremap  {  {}<left>
 inoremap  [  []<left>
@@ -29,6 +29,22 @@ cnoremap  "  ""<left>
 cnoremap  (  ()<left>
 cnoremap  {  {}<left>
 cnoremap  [  []<left>
+
+" Puts either signs around a WORD
+nnoremap  pa'  Bi'<Esc>Ea'<Esc>
+nnoremap  pa"  Bi"<Esc>Ea"<Esc>
+nnoremap  pa(  Bi(<Esc>Ea)<Esc>
+nnoremap  pa{  Bi{<Esc>Ea}<Esc>
+nnoremap  pa[  Bi[<Esc>Ea]<Esc>
+nnoremap  pa<  Bi<<Esc>Ea><Esc>
+
+" Puts either signs around a Visual selected area
+vnoremap  pa'  c'<Esc>p<Esc>a'<Esc>
+vnoremap  pa"  c"<Esc>p<Esc>a"<Esc>
+vnoremap  pa(  c(<Esc>p<Esc>a)<Esc>
+vnoremap  pa{  c{<Esc>p<Esc>a}<Esc>
+vnoremap  pa[  c[<Esc>p<Esc>a]<Esc>
+vnoremap  pa<  c<<Esc>p<Esc>a><Esc>
 
 "-------------------------------------------------- Alt-gr keymappings
 "Puts a semicolon, a colon or a dot at the end of the line(s)
