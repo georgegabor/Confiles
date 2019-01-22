@@ -116,6 +116,7 @@ Others:
     :scr or scriptnames '>>>' Lists the loaded scripts
     :map '>>>' Shows keymappings
     :map <buffer> '>>>' Shows keymappings for buffer
+    map! '>>>' Insert and command line mode, map for all the rest
 
 Comment for different filetypes:
     :autocmd FileType javascript nnoremap <buffer> <localleader>c I//<esc>

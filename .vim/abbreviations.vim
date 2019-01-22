@@ -6,4 +6,3 @@ iabbr fn function(<Right><Right><CR><Tab>{<CR><CR><Up><Tab>
 abbr cr <Cr<Left><Right>>
 abbr ff r! find / -name "**<Left>
 abbr char character
-" abbr < <></>

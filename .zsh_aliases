@@ -57,14 +57,14 @@ function reb()
     }
 
 # Git status: write the whole output of the 'git status' command into the tempgit file, then display only the modified ones
-  function gitstatus()
+  function gtst()
     {
         git status > $HOME/.tempgit
         grep -E "modified|new file" $HOME/.tempgit
     }
 
 # Commit and push
-function gitup()
+function gtup()
     {
         printf "%s\n" "${red} >>> ${yel} Committing ${end}"
         git commit -a -m "Up"

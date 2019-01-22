@@ -1,6 +1,6 @@
 "--------------------------------------------------- Leader mapping
 
-let g:mapleader = "\<Space>"
+let g:mapleader = "\\"
 
 "--------------------------------------------------- Alt keymappings
 " '\e' represents the <esc> key: execute set <M-w>=\ew
@@ -20,18 +20,12 @@ map! <silent> <M-s> <Esc>
 
 "-------------------------------------------------- Brackets, parantheses, quotes, singlequotes
 " Puts 2 signs instead of one
-inoremap  '  ''<left>
-inoremap  "  ""<left>
-inoremap  (  ()<left>
-inoremap  {  {}<left>
-inoremap  [  []<left>
-inoremap  <  <><left>
-cnoremap  '  ''<left>
-cnoremap  "  ""<left>
-cnoremap  (  ()<left>
-cnoremap  {  {}<left>
-cnoremap  [  []<left>
-cnoremap  <  <><left>
+noremap!  '  ''<left>
+noremap!  "  ""<left>
+noremap!  (  ()<left>
+noremap!  {  {}<left>
+noremap!  [  []<left>
+noremap!  <  <><left>
 
 " Puts either signs around a WORD
 nnoremap  pa'  Bi'<Esc>Ea'<Esc>
@@ -41,14 +35,29 @@ nnoremap  pa{  Bi{<Esc>Ea}<Esc>
 nnoremap  pa[  Bi[<Esc>Ea]<Esc>
 nnoremap  pa<  Bi<<Esc>Ea><Esc>
 
-" Puts either signs around a Visual selected area
-vnoremap  pa'  c'<Esc>p<Esc>a'<Esc>
-vnoremap  pa"  c"<Esc>p<Esc>a"<Esc>
-vnoremap  pa(  c(<Esc>p<Esc>a)<Esc>
-vnoremap  pa{  c{<Esc>p<Esc>a}<Esc>
-vnoremap  pa[  c[<Esc>p<Esc>a]<Esc>
-vnoremap  pa<  c<<Esc>p<Esc>a><Esc>
+" Replaces either signs around a WORD
+nnoremap  r'  Br'<Esc>Er'<Esc>
+nnoremap  r"  Br"<Esc>Er"<Esc>
+nnoremap  r(  Br(<Esc>Er)<Esc>
+nnoremap  r{  Br{<Esc>Er}<Esc>
+nnoremap  r[  Br[<Esc>Er]<Esc>
+nnoremap  r<  Br<<Esc>Er><Esc>
 
+" Puts either signs around a Visual selected area
+vnoremap  pa' <Esc>`>a'<Esc>`<i'<Esc> 
+vnoremap  pa" <Esc>`>a"<Esc>`<i"<Esc> 
+vnoremap  pa( <Esc>`>a)<Esc>`<i(<Esc> 
+vnoremap  pa{ <Esc>`>a}<Esc>`<i{<Esc> 
+vnoremap  pa[ <Esc>`>a]<Esc>`<i[<Esc> 
+vnoremap  pa< <Esc>`>a><Esc>`<i<<Esc> 
+
+" Replaces either signs around a Visual selected area
+vnoremap  r' <Esc>`>r'<Esc>`<r'<Esc> 
+vnoremap  r" <Esc>`>r"<Esc>`<r"<Esc> 
+vnoremap  r( <Esc>`>r)<Esc>`<r(<Esc> 
+vnoremap  r{ <Esc>`>r}<Esc>`<r{<Esc> 
+vnoremap  r[ <Esc>`>r]<Esc>`<r[<Esc> 
+vnoremap  r< <Esc>`>r><Esc>`<r<<Esc> 
 
 "-------------------------------------------------- Alt-gr keymappings
 "Puts a semicolon, a colon or a dot at the end of the line(s)
@@ -63,7 +72,8 @@ vnoremap ² :normal! mqA:<esc>`q
 nnoremap ² :normal! mqA:<esc>`q
 
 " <Altgr-u> Uppercasing the word behind the cursor
-inoremap ↓ <esc>mzgUiw`za
+noremap ↓ gUB
+noremap! ↓ <esc>mzgUB`za
 
 "-------------------------------------------------- Toggle line numbers
 
@@ -106,8 +116,11 @@ nnoremap pl :<C-U>exe "normal mz" . v:count1 . "o<C-V><Esc>`z"<CR>
 " Backspace as X
 nnoremap <BS> X
 
-" Tab as indent in Normal mode
-nnoremap in >>
+" Indent in Normal mode
+nnoremap il >>
+nnoremap ih <<
+nnoremap ik :.mo-2<Cr>
+nnoremap ij :.mo+1<Cr>
 
 "-------------------------------------------------------------------------------------------------------------------------------------------
 "-------------------------------------------------- Default keymaps, nothing to do with me ----------
