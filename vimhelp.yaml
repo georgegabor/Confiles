@@ -117,6 +117,7 @@ Others:
     :map '>>>' Shows keymappings
     :map <buffer> '>>>' Shows keymappings for buffer
     map! '>>>' Insert and command line mode, map for all the rest
+    :echo mapcheck(';g', 'n') '>>>' Check whether it's mapped
 
 Comment for different filetypes:
     :autocmd FileType javascript nnoremap <buffer> <localleader>c I//<esc>
