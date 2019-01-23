@@ -28,12 +28,12 @@ noremap!  [  []<left>
 noremap!  <  <><left>
 
 " Puts either signs around a WORD
-nnoremap  pa'  Bi'<Esc>Ea'<Esc>
-nnoremap  pa"  Bi"<Esc>Ea"<Esc>
-nnoremap  pa(  Bi(<Esc>Ea)<Esc>
-nnoremap  pa{  Bi{<Esc>Ea}<Esc>
-nnoremap  pa[  Bi[<Esc>Ea]<Esc>
-nnoremap  pa<  Bi<<Esc>Ea><Esc>
+nnoremap  p'  Bi'<Esc>Ea'<Esc>
+nnoremap  p"  Bi"<Esc>Ea"<Esc>
+nnoremap  p(  Bi(<Esc>Ea)<Esc>
+nnoremap  p{  Bi{<Esc>Ea}<Esc>
+nnoremap  p[  Bi[<Esc>Ea]<Esc>
+nnoremap  p<  Bi<<Esc>Ea><Esc>
 
 " Replaces either signs around a WORD
 nnoremap  r'  Br'<Esc>Er'<Esc>
@@ -44,12 +44,12 @@ nnoremap  r[  Br[<Esc>Er]<Esc>
 nnoremap  r<  Br<<Esc>Er><Esc>
 
 " Puts either signs around a Visual selected area
-vnoremap  pa'  <Esc>`>a'<Esc>`<i'<Esc> 
-vnoremap  pa"  <Esc>`>a"<Esc>`<i"<Esc> 
-vnoremap  pa(  <Esc>`>a)<Esc>`<i(<Esc> 
-vnoremap  pa{  <Esc>`>a}<Esc>`<i{<Esc> 
-vnoremap  pa[  <Esc>`>a]<Esc>`<i[<Esc> 
-vnoremap  pa<  <Esc>`>a><Esc>`<i<<Esc> 
+vnoremap  p'  <Esc>`>a'<Esc>`<i'<Esc> 
+vnoremap  p"  <Esc>`>a"<Esc>`<i"<Esc> 
+vnoremap  p(  <Esc>`>a)<Esc>`<i(<Esc> 
+vnoremap  p{  <Esc>`>a}<Esc>`<i{<Esc> 
+vnoremap  p[  <Esc>`>a]<Esc>`<i[<Esc> 
+vnoremap  p<  <Esc>`>a><Esc>`<i<<Esc> 
 
 " Replaces either signs around a Visual selected area
 vnoremap  r'  <Esc>`>r'<Esc>`<r'<Esc> 
@@ -132,7 +132,7 @@ nnoremap <buffer><silent><expr>k v:count ? 'k' : 'gk'
 nnoremap <silent> <Leader>tt :terminal<CR>
 " alt defaults
 inoremap <silent><C-v> <Esc>:set paste<CR>a<C-r>+<Esc>:set nopaste<CR>a
-nnoremap 0 ^
+" nnoremap 0 ^
 nnoremap Y y$
 nnoremap n nzzzv
 nnoremap N Nzzzv

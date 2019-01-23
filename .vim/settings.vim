@@ -10,6 +10,7 @@ set encoding=utf-8
 set foldlevelstart=99
 set foldmethod=manual
 set ignorecase
+set iskeyword=@,48-57,192-255
 set incsearch
 set laststatus=2
 set lazyredraw
@@ -17,8 +18,6 @@ set linebreak
 set modeline
 set mouse=a
 set nowrapscan
-" set nocompatible
-" set paste
 set relativenumber
 set ruler
 set shell=zsh
@@ -37,6 +36,7 @@ set tabstop=4
 set thesaurus+=$HOME/.vim/thesaurus/thesaurus.txt
 set title
 set undodir=$HOME/.vim/undodir//
+set virtualedit=all
 set wildmenu
 set wildmode=list:longest,full
 

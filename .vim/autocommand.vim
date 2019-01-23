@@ -1,3 +1,5 @@
+" :autocmd group event pattern nested command
+
 augroup CommentOut
     autocmd! FileType javascript nnoremap <buffer> <C-c> mzI// <esc>`z
     autocmd! FileType python nnoremap <buffer> <C-c> mzI# <esc>`z

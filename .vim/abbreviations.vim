@@ -1,6 +1,6 @@
 abbr us United States
 abbr abbr abbreviation
-br th tab help
+abbr th tab help
 abbr super write !sudo tee %
 iabbr fn function(<Right><Right><CR><Tab>{<CR><CR><Up><Tab>
 abbr cr <Cr<Left><Right>>
