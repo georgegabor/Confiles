@@ -30,6 +30,7 @@ nnoremap <silent> <Leader>m :marks<CR>
 nnoremap <silent> <Leader>r :reg<CR>
 nnoremap <silent> <Leader>qa :qa<CR>
 nnoremap <Leader>p :set paste!<CR>
+nnoremap <Leader>hl :highlight Visual cterm=bold ctermfg=237 ctermbg=32 gui=bold guifg=#2c3135 guibg=#6699CC<CR>
 
 "-------------------------------------------------- Brackets, parantheses, quotes, singlequotes
 " Puts 2 signs instead of one

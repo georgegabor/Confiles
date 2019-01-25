@@ -17,7 +17,6 @@ set laststatus=2
 set lazyredraw
 set linebreak
 set list
-set matchpairs+=":",':'
 set modeline
 set mouse=a
 set nowrapscan
@@ -63,4 +62,6 @@ set statusline +=\ \|
 set statusline +=%#function#\ column:
 set statusline +=\ %c
 set statusline +=\ <<<
+
+" vim:textwidth=130
 

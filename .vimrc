@@ -10,7 +10,7 @@ source $HOME/.vim/abbreviations.vim
 source $HOME/.vim/autocommand.vim
 
 filetype indent on " load filetype-specific indent files
-syntax enable " syntax highlighting
+syntax on " syntax highlighting
 
 let g:netrw_altv = 1
 let g:netrw_liststyle = 3
