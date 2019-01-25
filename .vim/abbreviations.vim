@@ -1,12 +1,14 @@
-abbr us United States
-abbr abbr abbreviation
-abbr th tab help
-abbr super write !sudo tee %
-iabbr fn function(<Right><Right><CR><Tab>{<CR><CR><Up><Tab>
-abbr cr <Cr<Right>
-abbr ff r! find / -name "**<Left>
-abbr char character
-abbr its it's<Del>
-abbr Its It's<Del>
-abbr thats that's<Del>
-abbr Thats That's<Del>
+noreabbr us United States
+noreabbr abbr abbreviation
+noreabbr th tab help
+noreabbr super write !sudo tee %
+noreabbr fn function(<Right><Right><CR><Tab>{<CR><CR><Up><Tab>
+noreabbr cr <Cr<Right>
+noreabbr ff r! find / -name "**<Left>
+noreabbr char character
+noreabbr its it's
+noreabbr Its It's
+noreabbr thats that's
+noreabbr Thats That's
+noreabbr whats what's
+noreabbr Whats What's

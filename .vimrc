@@ -69,7 +69,7 @@ command! Q call <SID>quitbuffer()
 command! -nargs=1 B :call <SID>bufferselect("<args>")
 command! W execute 'silent w !sudo tee % >/dev/null' | edit!
 
-"------------------------------ autocmd 
+"------------------------------ autocmd
 
 let g:lasttab = 1
 augroup save_last_tab
@@ -100,7 +100,7 @@ if $DISPLAY !=? '' && &t_Co == 256
     augroup END
 endif
 
-"------------------------------ adv maps 
+"------------------------------ adv maps
 
 " global replace
 vnoremap <Leader>sw "hy
@@ -229,50 +229,14 @@ function! <SID>ranger()
     redraw!
 endfunction
 
-""function! MyTabLine()
-""      let s = ''
-""      for i in range(tabpagenr('$'))
-""        " select the highlighting
-""        if i + 1 == tabpagenr()
-""          "let s .= '%#TabLineSel#'
-""          let s .= '%#TabLineSel#'
-""        else
-""          let s .= '%#TabLine#'
-""        endif
-""
-""        " set the tab page number (for mouse clicks)
-""        " let s .= '%' . (i + 1) . 'T'
-""
-""        " the label is made by MyTabLabel()
-""        let s .= ' %{MyTabLabel(' . (i + 1) . ')} '
-""      endfor
-""
-""      " after the last tab fill with TabLineFill and reset tab page nr
-""      let s .= '%#TabLineFill#%T'
-""
-""      " right-align the label to close the current tab page
-""      if tabpagenr('$') > 1
-""        let s .= '%=%#TabLine#%999Xclose'
-""      endif
-""
-""      return s
-""endfunction
-""
-""function! MyTabLabel(n)
-""      let buflist = tabpagebuflist(a:n)
-""      let winnr = tabpagewinnr(a:n)
-""      return buflist[winnr - 1] . ') ' . bufname(buflist[winnr - 1])
-""      " return bufname(buflist[winnr - 1]) . ') ' . buflist[winnr - 1]
-""endfunction
-
 if exists("+showtabline")
      function! MyTabLine()
          let s = ''
-         let t = tabpagenr()
+         let t = tabpagenr()  " Returns the focused tabnumber
          let i = 1
-         while i <= tabpagenr('$')
-             let buflist = tabpagebuflist(i)
-             let winnr = tabpagewinnr(i)
+         while i <= tabpagenr('$')  " Returns the last tabnumber, thus you know how many tabs are there
+             let buflist = tabpagebuflist(i)  " Returns the associated buffnumber
+             let winnr = tabpagewinnr(i)  " Returns the associated windownumber
              let s .= '%' . i . 'T'
              let s .= (i == t ? '%1*' : '%2*')
              let s .= '  '
@@ -289,8 +253,9 @@ if exists("+showtabline")
              let s .= file
              let i = i + 1
          endwhile
-         let s .= '%T%#TabLineFill#%='
-         let s .= (tabpagenr('$') > 1 ? '%999XX' : 'X')
+         let s .= (tabpagenr('$') > 1 ? '%=%#TabLineFill#%999X'  : 'X')
          return s
      endfunction
 endif
+
+" vim:textwidth=130

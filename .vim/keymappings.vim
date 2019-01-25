@@ -15,8 +15,21 @@ endfor
 noremap <silent> <M-w> :w<CR>
 noremap <silent> <M-q> :q<CR>
 noremap <M-a> :
-noremap <M-l> :source $MYVIMRC<CR>
+noremap <M-p> :source $MYVIMRC<CR>
 map! <silent> <M-s> <Esc>
+
+"-------------------------------------------------- Leader keymappings
+
+nnoremap <Leader>ws :mks! vimconfsession.vim<CR>
+nnoremap <Leader>wa :wa<CR>
+nnoremap <silent> <Leader>h :set hlsearch!<CR>
+nnoremap <Leader>sp :set spell!<CR>
+nnoremap <silent> <Leader>a :ab<CR>
+nnoremap <silent> <Leader>b :ls<CR>
+nnoremap <silent> <Leader>m :marks<CR>
+nnoremap <silent> <Leader>r :reg<CR>
+nnoremap <silent> <Leader>qa :qa<CR>
+nnoremap <Leader>p :set paste!<CR>
 
 "-------------------------------------------------- Brackets, parantheses, quotes, singlequotes
 " Puts 2 signs instead of one
@@ -29,7 +42,7 @@ noremap!  <  <><left>
 
 " Puts either signs around a WORD
 nnoremap  p'  Bi'<Esc>Ea'<Esc>
-nnoremap  p"  Bi"<Esc>Ea"<Esc>
+noremap  p"  Bi"<Esc>Ea"<Esc>
 nnoremap  p(  Bi(<Esc>Ea)<Esc>
 nnoremap  p{  Bi{<Esc>Ea}<Esc>
 nnoremap  p[  Bi[<Esc>Ea]<Esc>
@@ -44,20 +57,20 @@ nnoremap  r[  Br[<Esc>Er]<Esc>
 nnoremap  r<  Br<<Esc>Er><Esc>
 
 " Puts either signs around a Visual selected area
-vnoremap  p'  <Esc>`>a'<Esc>`<i'<Esc> 
-vnoremap  p"  <Esc>`>a"<Esc>`<i"<Esc> 
-vnoremap  p(  <Esc>`>a)<Esc>`<i(<Esc> 
-vnoremap  p{  <Esc>`>a}<Esc>`<i{<Esc> 
-vnoremap  p[  <Esc>`>a]<Esc>`<i[<Esc> 
-vnoremap  p<  <Esc>`>a><Esc>`<i<<Esc> 
+vnoremap  p'  <Esc>`>a'<Esc>`<i'<Esc>
+vnoremap  p"  <Esc>`>a"<Esc>`<i"<Esc>
+vnoremap  p(  <Esc>`>a)<Esc>`<i(<Esc>
+vnoremap  p{  <Esc>`>a}<Esc>`<i{<Esc>
+vnoremap  p[  <Esc>`>a]<Esc>`<i[<Esc>
+vnoremap  p<  <Esc>`>a><Esc>`<i<<Esc>
 
 " Replaces either signs around a Visual selected area
-vnoremap  r'  <Esc>`>r'<Esc>`<r'<Esc> 
-vnoremap  r"  <Esc>`>r"<Esc>`<r"<Esc> 
-vnoremap  r(  <Esc>`>r)<Esc>`<r(<Esc> 
-vnoremap  r{  <Esc>`>r}<Esc>`<r{<Esc> 
-vnoremap  r[  <Esc>`>r]<Esc>`<r[<Esc> 
-vnoremap  r<  <Esc>`>r><Esc>`<r<<Esc> 
+vnoremap  r'  <Esc>`>r'<Esc>`<r'<Esc>
+vnoremap  r"  <Esc>`>r"<Esc>`<r"<Esc>
+vnoremap  r(  <Esc>`>r)<Esc>`<r(<Esc>
+vnoremap  r{  <Esc>`>r}<Esc>`<r{<Esc>
+vnoremap  r[  <Esc>`>r]<Esc>`<r[<Esc>
+vnoremap  r<  <Esc>`>r><Esc>`<r<<Esc>
 
 "-------------------------------------------------- Alt-gr keymappings
 "Puts a semicolon, a colon or a dot at the end of the line(s)
@@ -82,29 +95,14 @@ nnoremap  <silent> <Leader>rn :set relativenumber!<CR>
 
 "-------------------------------------------------- Tab control
 
-nnoremap <silent> <C-h> :tabmove -1<CR>
-nnoremap <silent> <C-l> :tabmove +1<CR>
-nnoremap <silent> <C-n> :tabnew<CR>
-nnoremap <silent> <C-k> :tabnext<CR>
-nnoremap <silent> <C-f> :tabfirst<CR>
-nnoremap <silent> <C-j> :tabprevious<CR>
+nnoremap <silent> <m-h> :tabmove -1<CR>
+nnoremap <silent> <m-l> :tabmove +1<CR>
+nnoremap <silent> <m-n> :tabnew<CR>
+nnoremap <silent> <m-k> :tabnext<CR>
+nnoremap <silent> <m-f> :tabfirst<CR>
+nnoremap <silent> <m-j> :tabprevious<CR>
 
-"-------------------------------------------------- Leader keymappings
-
-nnoremap <Leader>ws :mks! vimconfsession.vim<CR>
-nnoremap <Leader>wa :wa<CR>
-nnoremap <silent> <Leader>h :set hlsearch!<CR>
-nnoremap <Leader>sp :set spell!<CR>
-nnoremap <silent> <Leader>a :ab<CR>
-nnoremap <silent> <Leader>b :ls<CR>
-nnoremap <silent> <Leader>m :marks<CR>
-nnoremap <silent> <Leader>r :reg<CR>
-nnoremap <silent> <Leader>qa :qa<CR>
-nnoremap <silent> H ^
-nnoremap <silent> L $
-nnoremap <Leader>p :set paste!<CR>
-
-"-------------------------------------------------- Other custom keymappings 
+"-------------------------------------------------- Other custom keymappings
 
 " To insert timestamp, press F3.
 nmap <F3> a<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR><Esc>
@@ -116,11 +114,22 @@ nnoremap pl :<C-U>exe "normal mz" . v:count1 . "o<C-V><Esc>`z"<CR>
 " Backspace as X
 nnoremap <BS> X
 
-" Indent in Normal mode
-nnoremap il >>
-nnoremap ih <<
-nnoremap ik :.mo-2<Cr>
-nnoremap ij :.mo+1<Cr>
+" Move lines
+nnoremap <C-l> >>
+nnoremap <C-h> <<
+nnoremap <C-k> :.mo-2<Cr>
+nnoremap <C-j> :.mo+1<Cr>
+vnoremap <C-k> :mo '<-2<Cr>
+vnoremap <C-j> :mo '>+1<Cr>
+
+" Yank visual selected area into x register
+vnoremap <F5> "xy
+
+" Paste x register
+nnoremap <F5> "xP
+
+nnoremap <silent> H ^
+nnoremap <silent> L $
 
 "-------------------------------------------------------------------------------------------------------------------------------------------
 "-------------------------------------------------- Default keymaps, nothing to do with me ----------

@@ -1,6 +1,7 @@
 set autoindent
 set breakindent
 set clipboard^=unnamed,unnamedplus
+set cmdwinheight=20
 set confirm
 set cursorline
 set directory=$HOME/.vim/backup//
@@ -16,15 +17,18 @@ set laststatus=2
 set lazyredraw
 set linebreak
 set list
+set matchpairs+=":",':'
 set modeline
 set mouse=a
 set nowrapscan
+set path+=$HOME/**
 set relativenumber
 set ruler
 set shell=zsh
 set shiftwidth=4
 set shortmess+=aAcIws
 set showcmd
+set showmatch
 set showmode
 set showtabline=2
 set smartcase
@@ -34,7 +38,9 @@ set softtabstop=4
 set stal=2
 set tabline=%!MyTabLine()
 set tabstop=4
+set textwidth=130
 set thesaurus+=$HOME/.vim/thesaurus/thesaurus.txt
+set timeoutlen=500
 set title
 set undodir=$HOME/.vim/undodir//
 set viminfo=!,'100,<100,/100,:100,s10,h
