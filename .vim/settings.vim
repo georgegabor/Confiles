@@ -15,6 +15,7 @@ set incsearch
 set laststatus=2
 set lazyredraw
 set linebreak
+set list
 set modeline
 set mouse=a
 set nowrapscan
@@ -25,7 +26,7 @@ set shiftwidth=4
 set shortmess+=aAcIws
 set showcmd
 set showmode
-set showtabline=4
+set showtabline=2
 set smartcase
 set smartindent
 set smarttab
@@ -36,6 +37,7 @@ set tabstop=4
 set thesaurus+=$HOME/.vim/thesaurus/thesaurus.txt
 set title
 set undodir=$HOME/.vim/undodir//
+set viminfo=!,'100,<100,/100,:100,s10,h
 set virtualedit=all
 set wildmenu
 set wildmode=list:longest,full

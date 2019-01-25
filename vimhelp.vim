@@ -144,3 +144,7 @@ Comment for different filetypes:
 Macro i used formatting:
 let a='0f'v$x55pa|p'
 :g//norm @a
+:set ts=2 noet | retab! | set et ts=4 | retab          '>>>' Retabbing
+
+ /* vim:tabstop=4:expandtab:shiftwidth=4 */
+
