@@ -43,7 +43,7 @@ noremap!  <  <><left>
 
 " Puts either signs around a WORD
 nnoremap  p'  Bi'<Esc>Ea'<Esc>
-noremap  p"  Bi"<Esc>Ea"<Esc>
+nnoremap  p"  Bi"<Esc>Ea"<Esc>
 nnoremap  p(  Bi(<Esc>Ea)<Esc>
 nnoremap  p{  Bi{<Esc>Ea}<Esc>
 nnoremap  p[  Bi[<Esc>Ea]<Esc>
