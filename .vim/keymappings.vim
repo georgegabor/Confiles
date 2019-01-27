@@ -3,6 +3,7 @@
 let g:mapleader = "\\"
 
 "--------------------------------------------------- Alt keymappings
+
 " '\e' represents the <esc> key: execute set <M-w>=\ew
 " or do the for loop with range for a-z
 
@@ -12,27 +13,29 @@ for i in range(97,122)
   exec "map! \e".c." <M-".c.">"
 endfor
 
-noremap <silent> <M-w> :w<CR>
-noremap <silent> <M-q> :q<CR>
-noremap <M-a> :
-noremap <M-l> :source $MYVIMRC<CR>
-map! <silent> <M-s> <Esc>
+nnoremap <silent> <M-w> :w<CR>
+nnoremap <silent> <M-q> :q<CR>
+nnoremap <M-a> :
+nnoremap <M-l> :source $MYVIMRC<CR>
+nnoremap <M-b> :ls<CR>
+nnoremap <M-g> :reg<CR>
+nnoremap <M-p> :set paste!<CR>
+nnoremap <silent> <M-h> :set hlsearch!<CR>
 
 "-------------------------------------------------- Leader keymappings
 
+nnoremap <silent> <Leader>nn :set number!<CR>
+nnoremap <silent> <Leader>rn :set relativenumber!<CR>
 nnoremap <Leader>ws :mks! vimconfsession.vim<CR>
 nnoremap <Leader>wa :wa<CR>
-nnoremap <silent> <Leader>h :set hlsearch!<CR>
 nnoremap <Leader>sp :set spell!<CR>
 nnoremap <silent> <Leader>a :ab<CR>
-nnoremap <silent> <Leader>b :ls<CR>
 nnoremap <silent> <Leader>m :marks<CR>
-nnoremap <silent> <Leader>r :reg<CR>
 nnoremap <silent> <Leader>qa :qa<CR>
-nnoremap <Leader>p :set paste!<CR>
 nnoremap <Leader>hl :highlight Visual cterm=bold ctermfg=237 ctermbg=32 gui=bold guifg=#2c3135 guibg=#6699CC<CR>
 
 "-------------------------------------------------- Brackets, parantheses, quotes, singlequotes
+
 " Puts 2 signs instead of one
 noremap!  '  ''<left>
 noremap!  "  ""<left>
@@ -89,11 +92,6 @@ nnoremap ² :normal! mqA:<esc>`q
 " <Altgr-u> Uppercasing the word behind the cursor
 noremap ↓ gUB
 noremap! ↓ <esc>mzgUB`za
-
-"-------------------------------------------------- Toggle line numbers
-
-nnoremap  <silent> <Leader>nn :set number!<CR>
-nnoremap  <silent> <Leader>rn :set relativenumber!<CR>
 
 "-------------------------------------------------- Tab control
 
