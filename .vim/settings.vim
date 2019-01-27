@@ -3,6 +3,7 @@ set breakindent
 set clipboard^=unnamed,unnamedplus
 set cmdwinheight=20
 set confirm
+" set cursorcolumn
 set cursorline
 set directory=$HOME/.vim/backup//
 set directory=$HOME/.vim/swp//
@@ -47,6 +48,7 @@ set virtualedit=all
 set wildmenu
 set wildmode=list:longest,full
 
+" Statusline
 set statusline =%#function#>>>
 set statusline +=\ %#function#\ %F
 set statusline +=\ %#identifier#\::\ %m\ %r\ %h\ %w\ %{strftime('%c')}%=

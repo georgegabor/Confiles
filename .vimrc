@@ -7,7 +7,9 @@ runtime! archlinux.vim
 source $HOME/.vim/settings.vim
 source $HOME/.vim/keymappings.vim
 source $HOME/.vim/abbreviations.vim
-source $HOME/.vim/autocommand.vim
+source $HOME/.vim/comment.vim
+" source $HOME/.vim/autocommand.vim
+" silent source! Session.vim
 
 filetype indent on " load filetype-specific indent files
 syntax on " syntax highlighting

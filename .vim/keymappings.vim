@@ -15,7 +15,7 @@ endfor
 noremap <silent> <M-w> :w<CR>
 noremap <silent> <M-q> :q<CR>
 noremap <M-a> :
-noremap <M-p> :source $MYVIMRC<CR>
+noremap <M-l> :source $MYVIMRC<CR>
 map! <silent> <M-s> <Esc>
 
 "-------------------------------------------------- Leader keymappings
@@ -75,6 +75,7 @@ vnoremap  r<  <Esc>`>r><Esc>`<r<<Esc>
 
 "-------------------------------------------------- Alt-gr keymappings
 "Puts a semicolon, a colon or a dot at the end of the line(s)
+
 " <Altgr-;>
 vnoremap ´ :normal! mqA;<esc>`q
 nnoremap ´ :normal! mqA;<esc>`q
@@ -96,12 +97,12 @@ nnoremap  <silent> <Leader>rn :set relativenumber!<CR>
 
 "-------------------------------------------------- Tab control
 
-nnoremap <silent> <m-h> :tabmove -1<CR>
-nnoremap <silent> <m-l> :tabmove +1<CR>
+nnoremap <silent> <C-h> :tabmove -1<CR>
+nnoremap <silent> <C-l> :tabmove +1<CR>
 nnoremap <silent> <m-n> :tabnew<CR>
-nnoremap <silent> <m-k> :tabnext<CR>
+nnoremap <silent> ł :tabnext<CR>
 nnoremap <silent> <m-f> :tabfirst<CR>
-nnoremap <silent> <m-j> :tabprevious<CR>
+nnoremap <silent> ĸ :tabprevious<CR>
 
 "-------------------------------------------------- Other custom keymappings
 
@@ -116,18 +117,17 @@ nnoremap pl :<C-U>exe "normal mz" . v:count1 . "o<C-V><Esc>`z"<CR>
 nnoremap <BS> X
 
 " Move lines
-nnoremap <C-l> >>
-nnoremap <C-h> <<
-nnoremap <C-k> :.mo-2<Cr>
-nnoremap <C-j> :.mo+1<Cr>
-vnoremap <C-k> :mo '<-2<Cr>
-vnoremap <C-j> :mo '>+1<Cr>
+nnoremap <S-Up> :.mo-2<Cr>
+nnoremap <S-Down> :.mo+1<Cr>
+vnoremap <S-Up> :mo '<-2<Cr>
+vnoremap <S-Down> :mo '>+1<Cr>
 
 " Yank visual selected area into x register
 vnoremap <F5> "xy
 
 " Paste x register
-nnoremap <F5> "xP
+nnoremap <F5> "xp
+nnoremap <F6> "xP
 
 nnoremap <silent> H ^
 nnoremap <silent> L $
@@ -138,8 +138,8 @@ nnoremap <silent> L $
 " j = gj :: k = gk  while preserving numbered jumps eg. 12j
 nnoremap <buffer><silent><expr>j v:count ? 'j' : 'gj'
 nnoremap <buffer><silent><expr>k v:count ? 'k' : 'gk'
-" open a terminal in $PWD
 nnoremap <silent> <Leader>tt :terminal<CR>
+" open a terminal in $PWD
 " alt defaults
 inoremap <silent><C-v> <Esc>:set paste<CR>a<C-r>+<Esc>:set nopaste<CR>a
 " nnoremap 0 ^

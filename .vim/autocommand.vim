@@ -1,17 +1,22 @@
 " :autocmd group event pattern nested command
-
-augroup CommentOut
-    autocmd! FileType javascript nnoremap <buffer> <C-c> mzI// <esc>`z
-    autocmd! FileType python nnoremap <buffer> <C-c> mzI# <esc>`z
-    autocmd! FileType vim nnoremap <buffer> <C-c> mzI" <esc>`z
-augroup END
-
-augroup RemoveComment
-    autocmd! FileType javascript nnoremap <buffer> ¢ mz0xx`z<esc>
-    autocmd! FileType python nnoremap <buffer>  ¢ mz0xx`z<esc>
-    autocmd! FileType vim nnoremap <buffer>  ¢ mz0xx`z<esc>
-augroup END
-
+"
+"
+" augroup CommentOut
+    " autocmd!
+    " autocmd FileType * <SID>ToggleComment
+" augroup END
+"augroup CommentOut
+"    autocmd! FileType javascript nnoremap <buffer> <C-c> mzI// <esc>`z
+"    autocmd! FileType python nnoremap <buffer> <C-c> mzI# <esc>`z
+"    autocmd! FileType vim nnoremap <buffer> <C-c> mzI" <esc>`z
+"augroup END
+"
+"augroup RemoveComment
+"    autocmd! FileType javascript nnoremap <buffer> ¢ mz0xx`z<esc>
+"    autocmd! FileType python nnoremap <buffer>  ¢ mz0xx`z<esc>
+"    autocmd! FileType vim nnoremap <buffer>  ¢ mz0xx`z<esc>
+"augroup END
+"
 " Save folding
 " augroup QuickNotes
 "   au BufWrite,VimLeave * mkview
