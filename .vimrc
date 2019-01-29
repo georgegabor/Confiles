@@ -255,7 +255,8 @@ if exists("+showtabline")
              let s .= file
              let i = i + 1
          endwhile
-         let s .= (tabpagenr('$') > 1 ? '%=%#TabLineFill#%999X'  : 'X')
+         let s .= '%=%#TabLineFill#%999X'
+         " let s .= (tabpagenr('$') > 1 ? '%=%#TabLineFill#%999X'  : 'X')
          return s
      endfunction
 endif

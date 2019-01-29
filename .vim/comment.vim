@@ -23,6 +23,7 @@ let s:comment_map = {
     \   "ahk": ';',
     \   "vim": '"',
     \   "tex": '%',
+    \   "zsh": '#',
     \ }
 
 function! ToggleComment()
