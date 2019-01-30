@@ -3,7 +3,7 @@
 let g:mapleader = "\\"
 
 "--------------------------------------------------- Alt keymappings
-
+"
 " '\e' represents the <esc> key: execute set <M-w>=\ew
 " or do the for loop with range for a-z
 
