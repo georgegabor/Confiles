@@ -4,7 +4,7 @@ nso http://www.nemzetisport.hu/
 tube https://www.youtube.com/
 settings qute://settings/
 dict https://dictzone.com/angol-magyar-szotar/
-motd https://highlightsfootball.com/#close
+motd https://highlightsfootball.com/?s=motd
 fb https://www.facebook.com/
 live https://www.ronaldo7.net/video/watch-football-live.html
 ghub https://github.com/georgegabor?tab=repositories
@@ -30,3 +30,4 @@ vim.org https://www.vim.org/
 oa https://www.oanda.com/demo-account/funding/1905634
 tm http://www.tippmix.hu/
 ibm https://karrierstart.training360.com/ibm-mainframe-uzemelteto-kepzes-es-allaslehetoseg/?fbclid=IwAR3Le7GKZtr9kejaV91fj_dNVeHWiN_7EDcDwONbCViykc5UrUN6mIBvySA
+tr https://www.tradingview.com/chart/
