@@ -5,12 +5,17 @@ alias l='ls'
 alias all='ls -a'
 alias ll='ls -lA'
 alias ls='ls --color=auto'
+
+#Pacman aliases
 alias upd='sudo pacman -Syyu'                               # Update
 alias install='sudo pacman -S'                              # Install package
 alias pac='sudo pacman --color auto'
 alias shwinstalledpackages="pacman -Qs"                     # Show installed packages/programs
-alias uninstall='sudo pacman -Rsn'                             # Remove a package
+alias uninstall='sudo pacman -Rsn'                          # Remove a package
+alias cleanpkgcache='sudo pacman -Sc'                       # Remove all uninstalled pkg cache
 alias shwnotneededpackages="pacman -Qdtq"                   # Find all the unnecessary packages
+
+alias checkdirsize='ncdu'
 alias rmvdir="sudo rm -rfv" # + Name of directory           # Delete a directory
 alias ht="htop -t"                                          # Htop tree like display
 alias cc="clear"                                            # Clear screen
