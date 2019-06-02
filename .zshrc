@@ -3,7 +3,7 @@
 #
 # Path to your oh-my-zsh installation.
 export ZSH="/home/geo/.oh-my-zsh"
-PROJECT=$HOME/Projects
+# PROJECT=$HOME/Projects
 export EDITOR=nvim
 
 # Set name of the theme to load --- if set to "random", it will
@@ -126,3 +126,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # source /usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/geo/.sdkman"
+[[ -s "/home/geo/.sdkman/bin/sdkman-init.sh" ]] && source "/home/geo/.sdkman/bin/sdkman-init.sh"
