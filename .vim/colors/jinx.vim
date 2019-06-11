@@ -6,15 +6,13 @@
 " ---------- Setup and Checks ----------- " {{{1
 
 if exists('syntax_on')
-	highlight clear
-	syntax reset
+    highlight clear
+    syntax reset
 endif
-
-let g:colors_name = 'jinx'
 
 " Colors {{{1
 
-" empty color dictionary
+" start with an empty color dictionary
 let s:jinx = {}
 
 " NOTE: For those looking to edit the theme
@@ -24,20 +22,9 @@ let s:jinx = {}
 "
 " let s:jinx.black = ['#000000', 0, 0]
 
-" completion menu, wildmenu, and status/tab lines
-let s:jinx.menu_bgr    = ['#4D5057', 238, 8]
-let s:jinx.menu_fgr    = ['#808080', 102, 15]
-let s:jinx.menusel_bgr = ['#1F2326', 235, 0]
-let s:jinx.menusel_fgr = ['#E1E1E1', 251, 7]
-let s:jinx.menualt_fgr = ['#E1E1E1', 251, 7]
-let s:jinx.menualt_bgr = ['#37383D', 237, 0]
-let s:jinx.tabsel_bgr  = ['#8DBC8D', 108, 2]
-
-" terminal colours for :terminal {{{
-
 let g:terminal_ansi_colors = [
-            \ '#4D545E', '#FF777A', '#8DBC8D', '#FFEB56', '#6699CC', '#CC99CC', '#5DD5FF', '#E1E1E1',
-            \ '#4D545E', '#FF777A', '#8DBC8D', '#FFEB56', '#6699CC', '#CC99CC', '#5DD5FF', '#E1E1E1'
+            \ '#4D545E', '#D9534F', '#80B080', '#FFEB56', '#6699CC', '#CC99CC', '#5DD5FF', '#E1E1E1',
+            \ '#4D545E', '#D9534F', '#80B080', '#FFEB56', '#6699CC', '#CC99CC', '#5DD5FF', '#E1E1E1'
             \ ]
 let s:i = 0
 for s:color in g:terminal_ansi_colors
@@ -45,88 +32,41 @@ for s:color in g:terminal_ansi_colors
     let s:i += 1
 endfor
 
-"}}}
+let s:jinx.red    = ['#EE5555', 210,  1]
+let s:jinx.green  = ['#88BB88', 108,  2]
+let s:jinx.yellow = ['#FFCC66', 220,  3]
+let s:jinx.blue   = ['#4488CC',  32,  4]
+let s:jinx.purple = ['#AA88CC', 140,  5]
+let s:jinx.cyan   = ['#44CCEE',  81,  6]
+let s:jinx.orange = ['#FF8844', 172,  9]
 
-" background, foreground, line, visual selection, folds,
-" and comments as well as standard 1-7 colors: red, green,
-" yellow, blue, purple, cyan, and orange (instead of white)
-if exists('g:jinx_colors') && g:jinx_colors =~? 'day' "{{{
+if exists('g:jinx_theme') && g:jinx_theme =~? 'day'
     set background=light
-    let s:jinx.fgr    = ['#494949', 238, 0]
-    let s:jinx.bgr    = ['#E1E1E1', 254, 7]
+    let s:jinx.fgr    = ['#494949', 238,  0]
+    let s:jinx.bgr    = ['#E1E1E1', 254,  7]
     let s:jinx.line   = ['#D0D0D0', 252, 15]
-    let s:jinx.select = ['#D0D0D0', 252, 15]
+    let s:jinx.select = ['#D0D0D0', 252,  1]
     let s:jinx.folded = ['#B2B2B2', 249, 15]
     let s:jinx.commnt = ['#808080', 244, 15]
-
-    let s:jinx.red    = ['#EF7878', 210, 1]
-    let s:jinx.green  = ['#78A078', 108, 2]
-    let s:jinx.yellow = ['#CE9D00', 178, 3]
-    let s:jinx.blue   = ['#4E88CF',  32, 4]
-    let s:jinx.purple = ['#AF86C8', 140, 5]
-    let s:jinx.cyan   = ['#00AFAF',  37, 6]
-    let s:jinx.orange = ['#E0914C', 166, 9]
-
-    let g:terminal_color_1 = '#EF7878'
-    let g:terminal_color_2 = '#78A078'
-    let g:terminal_color_3 = '#CE9D00'
-    let g:terminal_color_4 = '#4E88CF'
-    let g:terminal_color_5 = '#AF86C8'
-    let g:terminal_color_6 = '#00AFAF'
-    let g:terminal_color_9  = '#FF777A'
-    let g:terminal_color_10 = '#8DBC8D'
-    let g:terminal_color_11 = '#FFEB56'
-    let g:terminal_color_12 = '#6699CC'
-    let g:terminal_color_13 = '#CC99CC'
-    let g:terminal_color_14 = '#5DD5FF'
-    let g:terminal_ansi_colors = [
-                \ '#E1E1E1', '#EF7878', '#78A078', '#CE9D00', '#4E88CF', '#AF86C8', '#00AFAF', '#4D545E',
-                \ '#E1E1E1', '#FF777A', '#8DBC8D', '#FFEB56', '#6699CC', '#CC99CC', '#5DD5FF', '#4D545E'
-                \ ]
-    let s:i = 0
-    for s:color in g:terminal_ansi_colors
-        let g:terminal_color_{s:i} = s:color
-        let s:i += 1
-    endfor
-
-elseif exists('g:jinx_colors') && g:jinx_colors =~? 'midnight'
-    let s:jinx.menu_bgr    = ['#2c3135', 237, 0]
-
+    let s:jinx.yellow = ['#EE9911', 178,  3]
+    let s:jinx.cyan   = ['#3388AA',  37,  6]
+elseif exists('g:jinx_theme') && g:jinx_theme =~? 'midnight'
     set background=dark
-    let s:jinx.fgr    = ['#E1E1E1', 253, 7]
-    let s:jinx.bgr    = ['#1E2125', 234, 0]
-    let s:jinx.line   = ['#2c3135', 237, 15]
-    let s:jinx.select = ['#2c3135', 237, 15]
-    let s:jinx.folded = ['#414449', 240, 15]
-    let s:jinx.commnt = ['#B9B9B9', 102, 15]
-
-    let s:jinx.red    = ['#FF777A', 210, 1]
-    let s:jinx.green  = ['#8DBC8D', 108, 2]
-    let s:jinx.yellow = ['#FFEB56', 220, 3]
-    let s:jinx.blue   = ['#6699CC',  32, 4]
-    let s:jinx.purple = ['#CC99CC', 140, 5]
-    let s:jinx.cyan   = ['#5DD5FF',  81, 6]
-    let s:jinx.orange = ['#FF9157', 208, 9]
-
-else
-    " night
+    let s:jinx.fgr    = ['#CCCCCC', 251, 15]
+    let s:jinx.bgr    = ['#111111', 234,  0]
+    let s:jinx.line   = ['#2A2A2F', 237,  8]
+    let s:jinx.select = ['#2A2A2F', 237,  1]
+    let s:jinx.folded = ['#2A2A2F', 237,  8]
+    let s:jinx.commnt = ['#777777', 243,  7]
+else " night
     set background=dark
-    let s:jinx.fgr    = ['#E1E1E1', 254, 7]
-    let s:jinx.bgr    = ['#4D545E', 237, 0]
-    let s:jinx.line   = ['#5F6772', 243, 8]
-    let s:jinx.select = ['#5F6772', 243, 1]
-    let s:jinx.folded = ['#414449', 239, 8]
-    let s:jinx.commnt = ['#B9B9B9', 250, 8]
-
-    let s:jinx.red    = ['#FF777A', 210, 1]
-    let s:jinx.green  = ['#8DBC8D', 108, 2]
-    let s:jinx.yellow = ['#FFEB56', 220, 3]
-    let s:jinx.blue   = ['#6699CC',  32, 4]
-    let s:jinx.purple = ['#CC99CC', 140, 5]
-    let s:jinx.cyan   = ['#5DD5FF',  81, 6]
-    let s:jinx.orange = ['#FF9157', 208, 9]
-
-endif "}}}
+    let s:jinx.fgr    = ['#E1E1E1', 254, 15]
+    let s:jinx.bgr    = ['#4D545E', 237,  0]
+    let s:jinx.line   = ['#5F6772', 243,  8]
+    let s:jinx.select = ['#5F6772', 243,  8]
+    let s:jinx.folded = ['#5F6772', 243,  8]
+    let s:jinx.commnt = ['#B9B9B9', 250,  7]
+endif
 
 function! <SID>HighLight(GRP, FG, BG, ATT) abort  " {{{1
     if a:FG !=# ''
@@ -159,10 +99,10 @@ endfunction
 
 " Editor {{{2
 
-call <SID>HighLight('Title',       'commnt',    'bgr',  'bold')
-call <SID>HighLight('Visual',       'bgr',      'blue', 'bold')
+call <SID>HighLight('Title',        'commnt',   'bgr',  'bold')
+call <SID>HighLight('Visual',       '',         'select',   '')
 call <SID>HighLight('SignColumn',   '',         'line',     '')
-call <SID>HighLight('CursorLine',   '',         'line', 'none')
+call <SID>HighLight('CursorLine',   '',         'line',     '')
 call <SID>HighLight('CursorColumn', '',         'line',     '')
 call <SID>HighLight('CursorLineNr', 'cyan',     'line',     '')
 call <SID>HighLight('LineNr',       'commnt',   'line',     '')
@@ -170,7 +110,7 @@ call <SID>HighLight('ColorColumn',  'fgr',      'red',      '')
 call <SID>HighLight('Error',        'red',      'bgr',      '')
 call <SID>HighLight('ErrorMsg',     'red',      'bgr',      '')
 call <SID>HighLight('WarningMsg',   'red',      'bgr',      '')
-call <SID>HighLight('MatchParen',   'yellow',   'bgr',  'bold')
+call <SID>HighLight('MatchParen',   'yellow',   'bgr',      '')
 call <SID>HighLight('ModeMsg',      'cyan',     'bgr',      '')
 call <SID>HighLight('MoreMsg',      'cyan',     'bgr',      '')
 call <SID>HighLight('Directory',    'blue',     'bgr',      '')
@@ -179,107 +119,105 @@ call <SID>HighLight('NonText',      'commnt',   'bgr',      '')
 call <SID>HighLight('SpecialKey',   'commnt',   'bgr',      '')
 call <SID>HighLight('Folded',       'commnt',   'folded',   '')
 call <SID>HighLight('Search',       'bgr',      'blue',     '')
-call <SID>HighLight('HLNext',       'bgr',      'red',  'bold')
+call <SID>HighLight('HLNext',       'bgr',      'red',      '')
 call <SID>HighLight('Normal',       'fgr',      'bgr',      '')
-call <SID>HighLight('VertSplit',    'menu_bgr', 'menu_fgr', '')
+call <SID>HighLight('VertSplit',    'line',     'commnt',   '')
 
 " Tabline {{{2
 
-call <SID>HighLight('TabLine',      'menusel_fgr', 'menu_bgr',    'none')
-call <SID>HighLight('TabLineFill',  'menu_bgr',    'menu_bgr',        '')
-call <SID>HighLight('TabLineSel',   'menu_bgr',    'tabsel_bgr',  'bold')
-call <SID>HighLight('WildMenu',     'menusel_fgr', 'menu_bgr',    'bold')
-call <SID>HighLight('Pmenu',        'menusel_fgr', 'menu_bgr',    'bold')
-call <SID>HighLight('PmenuSel',     'menusel_bgr', 'menusel_fgr', 'bold')
-call <SID>HighLight('PmenuSbar',    'menu_fgr',    'menu_bgr',        '')
-call <SID>HighLight('PmenuThumb',   'menu_fgr',    'menu_bgr',        '')
-call <SID>HighLight('StatusLine',   'menu_bgr',    'menusel_fgr',     '')
-call <SID>HighLight('StatusLineNC', 'menu_bgr',    'menu_fgr',        '')
+call <SID>HighLight('TabLine',      'fgr',     'line',   '')
+call <SID>HighLight('TabLineFill',  'line',    'line',   '')
+call <SID>HighLight('TabLineSel',   'line',    'green',  '')
+call <SID>HighLight('WildMenu',     'bgr',     'fgr',    '')
+call <SID>HighLight('Pmenu',        'bgr',     'commnt', '')
+call <SID>HighLight('PmenuSel',     'fgr',     'bgr',    '')
+call <SID>HighLight('PmenuSbar',    'commnt',  'line',   '')
+call <SID>HighLight('PmenuThumb',   'commnt',  'line',   '')
+call <SID>HighLight('StatusLine',   'line',    'fgr',    '')
+call <SID>HighLight('StatusLineNC', 'fgr',     'line',   '')
 
 " Spelling {{{2
 call <SID>HighLight('SpellBad',   '', '', 'underline')
 call <SID>HighLight('SpellLocal', '', '', 'underline')
 call <SID>HighLight('SpellRare',  '', '', 'underline')
 
-" Ctrl-P {{{2
-call <SID>HighLight('CtrlPNoEntries', 'red',      '',         'bold')
-call <SID>HighLight('CtrlPMatch',     'blue',     '',         'bold')
-call <SID>HighLight('CtrlPLinePre',   'blue',     'menu_bgr', 'none')
-call <SID>HighLight('CtrlPPrtBase',   'blue',     '',         'none')
-call <SID>HighLight('CtrlPPrtCursor', 'menu_fgr', 'menu_bgr', 'bold')
-call <SID>HighLight('CtrlPMode1',     'menu_fgr', 'menu_bgr', 'bold')
-call <SID>HighLight('CtrlPMode2',     'menu_fgr', 'menu_bgr', 'bold')
-call <SID>HighLight('CtrlPStats',     'menu_fgr', 'menu_bgr', 'bold')
 
 " ALE linter {{{2
 
-call <SID>HighLight('ALEErrorSign',    'red',    'line',  '')
-call <SID>HighLight('ALEWarningSign',  'orange', 'line',  '')
-call <SID>HighLight('ALEError',        'red',    '',      'underline')
-call <SID>HighLight('ALEWarning',      'red',    '',      'underline')
-call <SID>HighLight('ALEStyleError',   'orange', '',      'underline')
-call <SID>HighLight('ALEStyleWarning', 'orange', '',      'underline')
+call <SID>HighLight('ALEErrorSign',    'red',    'line',       '')
+call <SID>HighLight('ALEWarningSign',  'orange', 'line',       '')
+call <SID>HighLight('ALEError',        'red',    '',  'underline')
+call <SID>HighLight('ALEWarning',      'red',    '',  'underline')
+call <SID>HighLight('ALEStyleError',   'orange', '',  'underline')
+call <SID>HighLight('ALEStyleWarning', 'orange', '',  'underline')
 
 " Generic {{{2
 
-call <SID>HighLight('Comment',      'commnt',  '',    '')
-call <SID>HighLight('Todo',         'red',     'bgr', 'bold')
-call <SID>HighLight('Float',        'cyan',    '',    '')
-call <SID>HighLight('Character',    'cyan',    '',    '')
-call <SID>HighLight('String',       'cyan',    '',    '')
-call <SID>HighLight('Number',       'cyan',    '',    'bold')
-call <SID>HighLight('Boolean',      'cyan',    '',    'bold')
-call <SID>HighLight('Exception',    'blue',    '',    'bold')
-call <SID>HighLight('Include',      'blue',    '',    '')
-call <SID>HighLight('Operator',     'blue',    '',    'bold')
-call <SID>HighLight('Label',        'green',   '',    '')
-call <SID>HighLight('Repeat',       'green',   '',    '')
-call <SID>HighLight('Statement',    'green',   '',    '')
-call <SID>HighLight('Conditional',  'green',   '',    '')
-call <SID>HighLight('Keyword',      'green',   '',    'bold')
-call <SID>HighLight('Structure',    'purple',  '',    'bold')
-call <SID>HighLight('StorageClass', 'purple',  '',    'bold')
-call <SID>HighLight('Type',         'purple',  '',    'bold')
-call <SID>HighLight('Tag',          'purple',  '',    'bold')
-call <SID>HighLight('Macro',        'purple',  '',    'bold')
-call <SID>HighLight('Special',      'purple',  '',    'bold')
-call <SID>HighLight('TypeDef',      'purple',  '',    'bold')
-call <SID>HighLight('Define',       'yellow',  '',    'bold')
-call <SID>HighLight('Constant',     'purple',  '',    'bold')
-call <SID>HighLight('PreProc',      'yellow',  '',    '')
-call <SID>HighLight('Identifier',   'yellow',  '',    'bold')
-call <SID>HighLight('PreCondit',    'yellow',  '',    '')
-call <SID>HighLight('Function',     'orange',  '',    'bold')
-call <SID>HighLight('Conceal',      'orange',  '',    '')
+call <SID>HighLight('Comment',      'commnt', '',     '')
+call <SID>HighLight('Todo',         'red',    '',     '')
+call <SID>HighLight('Exception',    'red',    '',     '')
+call <SID>HighLight('Float',        'cyan',   '',     '')
+call <SID>HighLight('Number',       'cyan',   '',     '')
+call <SID>HighLight('Include',      'cyan',   '',     '')
+call <SID>HighLight('Character',    'blue',   '',     '')
+call <SID>HighLight('Operator',     'blue',   '',     '')
+call <SID>HighLight('String',       'blue',   '',     '')
+call <SID>HighLight('Label',        'green',  '',     '')
+call <SID>HighLight('Repeat',       'purple', '',     '')
+call <SID>HighLight('Statement',    'green',  '',     '')
+call <SID>HighLight('Conditional',  'green',  '',     '')
+call <SID>HighLight('Boolean',      'green',  '',     '')
+call <SID>HighLight('Keyword',      'green',  '',     '')
+call <SID>HighLight('Macro',        'purple', '',     '')
+call <SID>HighLight('Define',       'purple', '',     '')
+call <SID>HighLight('Special',      'purple', '',     '')
+call <SID>HighLight('Tag',          'purple', '',     '')
+call <SID>HighLight('Type',         'purple', '',     '')
+call <SID>HighLight('TypeDef',      'purple', '',     '')
+call <SID>HighLight('Structure',    'purple', '',     '')
+call <SID>HighLight('StorageClass', 'purple', '',     '')
+call <SID>HighLight('PreProc',      'yellow', '',     '')
+call <SID>HighLight('Constant',     'yellow', '',     '')
+call <SID>HighLight('Identifier',   'yellow', '',     '')
+call <SID>HighLight('PreCondit',    'yellow', '',     '')
+call <SID>HighLight('Conceal',      'orange', '',     '')
+call <SID>HighLight('Function',     'orange', '',     '')
 
 " Vim {{{2
 
-call <SID>HighLight('vimCommand',     'green',  '', 'bold')
-call <SID>HighLight('vimVar',         'yellow', '', 'bold')
-call <SID>HighLight('vimGroup',       'yellow', '', 'bold')
-call <SID>HighLight('vimGroupName',   'yellow', '', 'bold')
-call <SID>HighLight('VimFunction',    'orange', '', 'bold')
-call <SID>HighLight('VimFunctionKey', 'orange', '', 'bold')
-call <SID>HighLight('vimMapModKey',   'purple', '', 'bold')
-call <SID>HighLight('vimBracket',     'purple', '', 'bold')
-call <SID>HighLight('vimOption',      'purple', '', 'bold')
+call <SID>HighLight('vimCommand',     'green',  '', '')
+call <SID>HighLight('vimVar',         'yellow', '', '')
+call <SID>HighLight('vimGroup',       'yellow', '', '')
+call <SID>HighLight('vimGroupName',   'yellow', '', '')
+call <SID>HighLight('VimFunction',    'orange', '', '')
+call <SID>HighLight('VimFunctionKey', 'orange', '', '')
+call <SID>HighLight('vimMapModKey',   'purple', '', '')
+call <SID>HighLight('vimBracket',     'purple', '', '')
+call <SID>HighLight('vimOption',      'purple', '', '')
 call <SID>HighLight('vimMapMod',      'purple', '', '')
 call <SID>HighLight('vimNotation',    'purple', '', '')
 
 " Shell {{{2
 
-call <SID>HighLight('shSet',          'green',  '', 'bold')
-call <SID>HighLight('shLoop',         'green',  '', 'bold')
-call <SID>HighLight('shTestOpr',      'green',  '', 'bold')
-call <SID>HighLight('shConstant',     'yellow', '', 'bold')
-call <SID>HighLight('shFunctionKey',  'orange', '', 'bold')
-call <SID>HighLight('shStatement',    'green',  '', 'bold')
-call <SID>HighLight('shKeyword',      'purple', '', 'bold')
-call <SID>HighLight('zshStatement',   'green',  '', 'bold')
-call <SID>HighLight('zshOption',      'green',  '', 'bold')
-call <SID>HighLight('zshFunction',    'orange', '', 'bold')
+call <SID>HighLight('shSet',          'green',  '', '')
+call <SID>HighLight('shLoop',         'green',  '', '')
+call <SID>HighLight('shFor',          'yellow', '', '')
+call <SID>HighLight('shTestOpr',      'blue',   '', '')
+call <SID>HighLight('shConstant',     'yellow', '', '')
+call <SID>HighLight('shFunctionKey',  'orange', '', '')
+call <SID>HighLight('shStatement',    'green',  '', '')
+call <SID>HighLight('shKeyword',      'purple', '', '')
+call <SID>HighLight('zshStatement',   'green',  '', '')
+call <SID>HighLight('zshOption',      'purple', '', '')
+call <SID>HighLight('zshParentheses', 'purple', '', '')
+call <SID>HighLight('zshBrackets',    'purple', '', '')
+call <SID>HighLight('zshRepeat',      'green',  '', '')
+call <SID>HighLight('zshRedir',       'fgr',    '', '')
+call <SID>HighLight('zshFunction',    'orange', '', '')
 call <SID>HighLight('zshVariableDef', 'yellow', '', '')
-call <SID>HighLight('zshOperator',    'blue',   '', 'bold')
+call <SID>HighLight('zshVariable',    'yellow', '', '')
+call <SID>HighLight('zshOperator',    'blue',   '', '')
+call <SID>HighLight('zshPreProc',     'commnt', '', '')
 
 " C {{{2
 
@@ -293,8 +231,8 @@ call <SID>HighLight('cType',         'yellow', '', '')
 call <SID>HighLight('phpMemberSelector', 'blue',   '', '')
 call <SID>HighLight('phpVarSelector',    'red',    '', '')
 call <SID>HighLight('phpConditional',    'green',  '', '')
-call <SID>HighLight('phpStatement',      'green',  '', 'bold')
-call <SID>HighLight('phpKeyword',        'purple', '', 'bold')
+call <SID>HighLight('phpStatement',      'green',  '', '')
+call <SID>HighLight('phpKeyword',        'purple', '', '')
 call <SID>HighLight('phpRepeat',         'purple', '', '')
 
 " Ruby {{{2
@@ -316,33 +254,33 @@ call <SID>HighLight('rubyConstant',               'yellow', '', '')
 " Python {{{2
 
 call <SID>HighLight('pythonRun',             'red',    '', '')
-call <SID>HighLight('pythonOperator',        'blue',   '', 'bold')
+call <SID>HighLight('pythonOperator',        'blue',   '', '')
 call <SID>HighLight('pythonClass',           'blue',   '', '')
 call <SID>HighLight('pythonClassParameters', 'purple', '', '')
 call <SID>HighLight('pythonParam',           'purple', '', '')
-call <SID>HighLight('pythonDecorator',       'blue',   '', 'bold')
+call <SID>HighLight('pythonDecorator',       'blue',   '', '')
 call <SID>HighLight('pythonExClass',         'blue',   '', '')
-call <SID>HighLight('pythonException',       'blue',   '', 'bold')
-call <SID>HighLight('pythonExceptions',      'blue',   '', 'bold')
+call <SID>HighLight('pythonException',       'blue',   '', '')
+call <SID>HighLight('pythonExceptions',      'blue',   '', '')
 call <SID>HighLight('pythonBrackets',        'blue',   '', '')
 call <SID>HighLight('pythonEscape',          'blue',   '', '')
-call <SID>HighLight('pythonImport',          'green',  '', 'bold')
+call <SID>HighLight('pythonImport',          'green',  '', '')
 call <SID>HighLight('pythonRepeat',          'green',  '', '')
 call <SID>HighLight('pythonCoding',          'green',  '', '')
-call <SID>HighLight('pythonInclude',         'green',  '', 'bold')
+call <SID>HighLight('pythonInclude',         'green',  '', '')
 call <SID>HighLight('pythonPreCondit',       'green',  '', '')
-call <SID>HighLight('pythonStatement',       'green',  '', 'bold')
+call <SID>HighLight('pythonStatement',       'green',  '', '')
 call <SID>HighLight('pythonConditional',     'green',  '', '')
-call <SID>HighLight('pythonDef',             'yellow', '', 'bold')
-call <SID>HighLight('pythonSelf',            'blue',   '', 'bold')
-call <SID>HighLight('pythonBuiltinType',     'purple', '', 'bold')
-call <SID>HighLight('pythonBuiltin',         'purple', '', 'bold')
-call <SID>HighLight('pythonBuiltinObj',      'purple', '', 'bold')
-call <SID>HighLight('pythonBuiltinFunc',     'orange', '', 'bold')
-call <SID>HighLight('pythonDot',             'orange', '', 'bold')
+call <SID>HighLight('pythonDef',             'yellow', '', '')
+call <SID>HighLight('pythonSelf',            'blue',   '', '')
+call <SID>HighLight('pythonBuiltinType',     'purple', '', '')
+call <SID>HighLight('pythonBuiltin',         'purple', '', '')
+call <SID>HighLight('pythonBuiltinObj',      'purple', '', '')
+call <SID>HighLight('pythonBuiltinFunc',     'orange', '', '')
+call <SID>HighLight('pythonDot',             'orange', '', '')
 call <SID>HighLight('pythonLambda',          'orange', '', '')
 call <SID>HighLight('pythonLambdaExpr',      'orange', '', '')
-call <SID>HighLight('pythonFunction',        'orange', '', 'bold')
+call <SID>HighLight('pythonFunction',        'orange', '', '')
 call <SID>HighLight('pythonDottedName',      'orange', '', '')
 call <SID>HighLight('pythonBuiltinObjs',     'orange', '', '')
 
@@ -365,25 +303,25 @@ call <SID>HighLight('texComment',     'commnt', '', 'none')
 
 " JavaScript {{{2
 
-call <SID>HighLight('javaScriptNumber',      'cyan',   '', 'bold')
-call <SID>HighLight('javascriptNull',        'red',    '', 'bold')
+call <SID>HighLight('javaScriptNumber',      'cyan',   '', '')
+call <SID>HighLight('javascriptNull',        'red',    '', '')
 call <SID>HighLight('javascriptStatement',   'green',  '', '')
 call <SID>HighLight('javaScriptConditional', 'green',  '', '')
 call <SID>HighLight('javaScriptRepeat',      'purple', '', '')
-call <SID>HighLight('javaScriptBraces',      'purple', '', 'bold')
-call <SID>HighLight('javascriptGlobal',      'yellow', '', 'bold')
-call <SID>HighLight('javaScriptFunction',    'orange', '', 'bold')
-call <SID>HighLight('javaScriptMember',      'orange', '', 'bold')
+call <SID>HighLight('javaScriptBraces',      'purple', '', '')
+call <SID>HighLight('javascriptGlobal',      'yellow', '', '')
+call <SID>HighLight('javaScriptFunction',    'orange', '', '')
+call <SID>HighLight('javaScriptMember',      'orange', '', '')
 
 " HTML {{{2
 
 call <SID>HighLight('htmlTag',       'red',    '', '')
-call <SID>HighLight('htmlTagName',   'red',    '', 'bold')
-call <SID>HighLight('htmlLink',      'blue',   '', 'bold')
-call <SID>HighLight('htmlArg',       'green',  '', 'bold')
-call <SID>HighLight('htmlScriptTag', 'purple', '', 'bold')
-call <SID>HighLight('htmlTitle',     'blue',   '', 'bold')
-call <SID>HighLight('htmlH1',        'blue',   '', 'bold')
+call <SID>HighLight('htmlTagName',   'red',    '', '')
+call <SID>HighLight('htmlLink',      'blue',   '', '')
+call <SID>HighLight('htmlArg',       'green',  '', '')
+call <SID>HighLight('htmlScriptTag', 'purple', '', '')
+call <SID>HighLight('htmlTitle',     'blue',   '', '')
+call <SID>HighLight('htmlH1',        'blue',   '', '')
 call <SID>HighLight('htmlH2',        'cyan',   '', '')
 call <SID>HighLight('htmlH3',        'cyan',   '', '')
 call <SID>HighLight('htmlH4',        'green',  '', '')
@@ -403,10 +341,10 @@ call <SID>HighLight('markdownHeadingDelimiter',  'red',    '', '')
 call <SID>HighLight('markdownListMarker',        'blue',   '', '')
 call <SID>HighLight('markdownOrderedListMarker', 'blue',   '', '')
 call <SID>HighLight('markdownCode',              'purple', '', '')
-call <SID>HighLight('markdownCodeBlock',         'purple', '', 'bold')
-call <SID>HighLight('markdownCodeDelimiter',     'orange', '', 'bold')
-call <SID>HighLight('markdownH1',                'blue',   '', 'bold')
-call <SID>HighLight('markdownH2',                'blue',   '', 'bold')
+call <SID>HighLight('markdownCodeBlock',         'purple', '', '')
+call <SID>HighLight('markdownCodeDelimiter',     'purple', '', '')
+call <SID>HighLight('markdownH1',                'blue',   '', '')
+call <SID>HighLight('markdownH2',                'blue',   '', '')
 call <SID>HighLight('markdownH3',                'cyan',   '', '')
 call <SID>HighLight('markdownH4',                'cyan',   '', '')
 call <SID>HighLight('markdownH5',                'green',  '', '')
@@ -503,13 +441,14 @@ call <SID>HighLight('scalaLineComment',     'commnt', '', '')
 
 " Diff {{{2
 
-call <SID>HighLight('DiffDelete', 'red',   '',  '')
-call <SID>HighLight('DiffChange', 'blue',  '',  '')
-call <SID>HighLight('DiffAdd',    'green', '',  '')
-call <SID>HighLight('DiffText',   'line',  'blue', 'bold')
+call <SID>HighLight('DiffDelete', 'red',   '',     '')
+call <SID>HighLight('DiffChange', 'blue',  '',     '')
+call <SID>HighLight('DiffAdd',    'green', '',     '')
+call <SID>HighLight('DiffText',   'line',  'blue', '')
 
 " Cleanup {{{2
 
 " Remove the highlight function as it's no longer needed.
 " Will cause problems reloading the theme if not deleted.
 delfunction <SID>HighLight
+let g:colors_name = 'jinx'
