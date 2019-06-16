@@ -2,7 +2,7 @@
 
 "------------------------------ Arch defaults
 
-runtime! archlinux.vim
+" runtime! archlinux.vim
 
 source $HOME/.vim/settings.vim
 source $HOME/.vim/keymappings.vim
@@ -27,12 +27,12 @@ endif
 
 "------------------------------ midnight, night, or day
 
-" let g:jinx_colors = 'midnight'
+let g:jinx_theme = 'night'
 
 try
-    colorscheme koehler
+    colorscheme monokai
 catch
-    colorscheme slate
+    colorscheme koehler
 endtry
 
 if $TERM !=? 'linux'

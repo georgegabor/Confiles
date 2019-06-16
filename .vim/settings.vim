@@ -22,6 +22,7 @@ set modeline
 set mouse=a
 set nowrapscan
 set path+=$HOME/**
+set path+=$HOME/.vim/colors//
 set relativenumber
 set ruler
 set shell=zsh
