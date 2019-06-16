@@ -27,10 +27,10 @@ endif
 
 "------------------------------ midnight, night, or day
 
-let g:jinx_colors = 'midnight'
+" let g:jinx_colors = 'midnight'
 
 try
-    colorscheme jinx
+    colorscheme koehler
 catch
     colorscheme slate
 endtry
@@ -94,13 +94,13 @@ augroup END
 
 """""" when not running in a console or a terminal that doesn't support 256 colors
 """""" enable cursorline in the currently active window and disable it in inactive ones
-if $DISPLAY !=? '' && &t_Co == 256
-    augroup cursorline
-        autocmd!
-        autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
-        autocmd WinLeave * setlocal nocursorline
-    augroup END
-endif
+" if $DISPLAY !=? '' && &t_Co == 256
+    " augroup cursorline
+        " autocmd!
+        " autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+        " autocmd WinLeave * setlocal nocursorline
+    " augroup END
+" endif
 
 "------------------------------ adv maps
 

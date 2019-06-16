@@ -65,5 +65,7 @@ set statusline +=%#function#\ column:
 set statusline +=\ %c
 set statusline +=\ <<<
 
+colorscheme koehler
+
 " vim:textwidth=130
 
