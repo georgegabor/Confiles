@@ -44,16 +44,16 @@ settings:
   fonts.tabs:
     global: 12pt sans
   url.default_page:
-    global: https://google.com/
+    global: https://google.com/search?q={}
   url.incdec_segments:
     global:
     - path
     - query
   url.open_base_url:
-    global: false
+    global: true
   url.searchengines:
     global:
-      DEFAULT: https://google.com/?q={}
+      DEFAULT: https://google.com/search?q={}
   url.start_pages:
     global: https://google.com
   url.yank_ignored_parameters:
