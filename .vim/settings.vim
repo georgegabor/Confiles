@@ -4,7 +4,7 @@ set clipboard^=unnamed,unnamedplus
 set cmdwinheight=20
 set confirm
 " set cursorcolumn
-set cursorline
+" set cursorline
 set directory=$HOME/.vim/backup//
 set directory=$HOME/.vim/swp//
 set expandtab
