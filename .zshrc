@@ -96,7 +96,6 @@ chpwd() {
 
 source $ZSH/oh-my-zsh.sh
 
-gitpull
 # User configuration
 # export MANPATH="/usr/local/man:$MANPATH"
 
