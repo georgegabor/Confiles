@@ -94,11 +94,10 @@ chpwd() {
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 
-
 source $ZSH/oh-my-zsh.sh
 
+gitpull
 # User configuration
-
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment

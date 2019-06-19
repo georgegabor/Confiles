@@ -109,6 +109,12 @@ function ff()
         fi # closing statement of if-else block
     }
 
+function gitpull()
+    {
+        printf "%s\n" "${grn}Pulling the Git...${end}"
+        git pull
+    }
+
 # ===================================================================
 #
 # ===================================================================
