@@ -13,7 +13,8 @@ export EDITOR=nvim
 ZSH_THEME="powerlevel9k/powerlevel9k"
 # ZSH_THEME="agnoster"
 #
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
+# POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs time)
 
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
