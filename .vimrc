@@ -30,9 +30,9 @@ endif
 let g:jinx_theme = 'night'
 
 try
-    colorscheme monokai
-catch
     colorscheme koehler
+catch
+    colorscheme jinx
 endtry
 
 if $TERM !=? 'linux'
