@@ -29,7 +29,7 @@ alias dl="dirs -v"                                          # List directories i
 alias mirrors='sudo reflector --score 100 --fastest 25 --sort rate --save /etc/pacman.d/mirrorlist --verbose'
 alias P='cd $HOME/Projects'
 alias D='cd $HOME/Downloads'
-alias eclipse='$HOME/eclipse/java-2019-03/eclipse/eclipse'
+# alias eclipse='$HOME/eclipse/java-2019-03/eclipse/eclipse'
 alias sts='$HOME/STS/SpringToolSuite4'
 
 # ===================================================================
