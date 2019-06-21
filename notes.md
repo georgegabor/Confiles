@@ -147,20 +147,18 @@ REST services
         Resources are manipulated using a fixed set of four create, read, update, delete operations: PUT, GET, POST, and DELETE.
         PUT creates a new resource, which can be then deleted by using DELETE.
         GET retrieves the current state of a resource in some representation.
-        POST transfers a new state onto a resource. See Responding to HTTP Methods and Requests for more information.
+        POST transfers a new state onto a resource.
 
         3.Self-descriptive messages:
         Resources are decoupled from their representation so that their content can be accessed in a variety of formats,
         such as HTML, XML, plain text, PDF, JPEG, JSON, and others.
         Metadata about the resource is available and used, for example, to control caching, detect transmission errors,
         negotiate the appropriate representation format, and perform authentication or access control.
-        See Responding to HTTP Methods and Requests and Using Entity Providers to Map HTTP Response and Request Entity Bodies for more information.
 
         4.Stateful interactions through hyperlinks:
         Every interaction with a resource is stateless; that is, request messages are self-contained.
         Stateful interactions are based on the concept of explicit state transfer.
         Several techniques exist to exchange state, such as URI rewriting, cookies, and hidden form fields.
         State can be embedded in response messages to point to valid future states of the interaction.
-        See Using Entity Providers to Map HTTP Response and Request Entity Bodies and “Building URIs” in the JAX-RS Overview document for more information.
 
 
