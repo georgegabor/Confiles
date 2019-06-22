@@ -167,6 +167,11 @@ Spring Framework
 
     Spring is modular, so one can pick the modules which are needed for one's application, and leave out the rests.
     The Spring Framework provides about 20 modules which can be used based on an application requirement.
+    The container gets its instructions on what objects to instantiate, configure, and assemble by reading the configuration metadata provided.
+    The configuration metadata can be represented either by XML, Java annotations, or Java code.
+    Spring provides the following two distinct types of containers:
+        - Spring BeanFactory Container: basic and lightweight.
+        - Spring ApplicationContext Container: more enterprise specific
 
     1. Data Access/Integration:
         - JDBC: DBC-abstraction layer that removes the need for tedious JDBC related coding.
