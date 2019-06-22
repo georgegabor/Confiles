@@ -162,3 +162,39 @@ REST services
         State can be embedded in response messages to point to valid future states of the interaction.
 
 
+Spring Framework
+========================
+
+    Spring is modular, so one can pick the modules which are needed for one's application, and leave out the rests.
+    The Spring Framework provides about 20 modules which can be used based on an application requirement.
+
+    1. Data Access/Integration:
+        - JDBC: DBC-abstraction layer that removes the need for tedious JDBC related coding.
+        - ORM: integration layers for popular object-relational mapping APIs, including JPA, JDO, Hibernate, and iBatis.
+        - OXM: abstraction layer that supports Object/XML mapping implementations for JAXB, Castor, XMLBeans, JiBX and XStream.
+        - JMS(Java Messaging Service): contains features for producing and consuming messages.
+        - Transaction: programmatic and declarative transaction management for classes that implement
+                        special interfaces and for all your POJOs.
+
+    2. Web(MVC/Remoting):
+        - Web: provides basic web-oriented integration features such as multipart file-upload functionality
+                and the initialization of the IoC container using servlet listeners and a web-oriented application context.
+        - Web-MVC: Spring's Model-View-Controller (MVC) implementation for web applications.
+        - Web-Socket: support for WebSocket-based, two-way communication between the client and the server in web applications.
+        - Web-Portlet: the MVC implementation to be used in a portlet environment and mirrors the functionality of Web-Servlet module.
+
+    3. Core Container:
+        - Beans: provides BeanFactory, which is a sophisticated implementation of the factory pattern.
+        - Core: IoC and Dependency Injection features
+        - Context: this module builds on the solid base provided by the Core and Beans modules and
+                    it is a medium to access any objects defined and configured.
+        - RpEl: provides a powerful expression language for querying and manipulating an object graph at runtime.
+
+    5. Miscellaneous:
+        - AOP: provides an aspect-oriented programming implementation allowing you to define method-interceptors and pointcuts
+                to cleanly decouple code that implements functionality that should be separated.
+        - Aspects: provides integration with AspectJ, which is again a powerful and mature AOP framework.
+        - Instrumentation: provides class instrumentation support and class loader implementations to be used in certain application servers.
+        - Messaging: provides support for STOMP as the WebSocket sub-protocol to use in applications. It also supports an
+                        annotation programming model for routing and processing STOMP messages from WebSocket clients.
+        - Test: supports the testing of Spring components with JUnit or TestNG frameworks.
