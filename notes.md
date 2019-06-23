@@ -31,30 +31,34 @@ Basic elements of programming
 Basic Concepts of Object Oriented Programming
 ========================
 
-    1. Class  -
-    The class is a model or blueprint or prototype of an object that defines or specifies all the properties of the objects.
+    1. Class:
+        The class is a model or blueprint or prototype of an object that defines or specifies all the properties of the objects.
 
-    2. Object  -
-    An object is an entity or instance of a class. The objects are mostly the physical entity but it can be a logical entity as well.
-    Each object has state and behaviours.
+    2. Object:
+        An object is an entity or instance of a class. The objects are mostly the physical entity but it can be a logical entity as well.
+        Each object has state and behaviours.
 
-    3. Abstraction  -
-    Abstraction means hiding the implementation and showing only functionality to the user, where the user can interact with the provided
-    interface, but the rest is hidden.
+    3. Abstraction:
+        Abstraction means hiding the implementation and showing only functionality to the user, where the user can interact with the provided
+        interface, but the rest is hidden.
 
-    4. Encapsulation  -
-    Encapsulation is the process of binding the data by making it private and functions to process that data into a single unit.
-    Encapsulation provides security to the data.
+    4. Encapsulation:
+        Encapsulation in Java is a mechanism of wrapping the data (variables) and code acting on the data (methods) together as a single unit.
+        In encapsulation, the variables of a class will be hidden from other classes, and can be accessed only through the methods of their current class.
+        Therefore, it is also known as data hiding.
+        To achieve encapsulation in Java declare the variables of a class as private and
+        provide public setter and getter methods to modify and view the variables values.
 
-    5. Inheritance  -
-    Inheritance is the process of acquiring or sharing the properties and behaviours of the base class into the sub class to achieve reusability.
 
-    6. Polymorphism  -
-    Polymorphism mean same name having different functionality.
+    5. Inheritance:
+        Inheritance is the process of acquiring or sharing the properties and behaviours of the base class into the sub class to achieve reusability.
 
-    7. Data Hiding  -
-    Data hiding is the process of making the data members private so those will not be visible to other classes.
-    The data of a object is not accessible to another objects, because each object has independent copy of the instance variables.
+    6. Polymorphism:
+        Polymorphism mean same name having different functionality.
+
+    7. Data Hiding:
+        Data hiding is the process of making the data members private so those will not be visible to other classes.
+        The data of a object is not accessible to another objects, because each object has independent copy of the instance variables.
 
 Determine the output of code snippets
 ========================
