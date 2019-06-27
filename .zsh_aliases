@@ -3,9 +3,10 @@
 # ===================================================================
 
 alias l='ls'
-alias all='ls -a'
+alias la='ls -a'
 alias ll='ls -lA'
 alias ls='ls --color=auto'
+alias lh='ls -a | grep "^\."'
 
 #Pacman aliases
 alias upd='sudo pacman -Syyu'                               # Update
