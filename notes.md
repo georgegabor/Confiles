@@ -207,3 +207,14 @@ Spring Framework
         - Messaging: provides support for STOMP as the WebSocket sub-protocol to use in applications. It also supports an
                         annotation programming model for routing and processing STOMP messages from WebSocket clients.
         - Test: supports the testing of Spring components with JUnit or TestNG frameworks.
+
+Java
+========================
+
+    Reference types: - Classes
+                     - Arrays
+                     - Interfaces
+                     - Generics
+                     - Enums and Annotations
+                     - Lambda expressions and nested types
+                     - Non-denotable types
