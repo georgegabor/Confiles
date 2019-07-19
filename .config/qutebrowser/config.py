@@ -486,7 +486,7 @@ c.fonts.downloads = '12pt sans'
 
 # Font used for the hints.
 # Type: Font
-c.fonts.hints = 'bold 12pt sans'
+c.fonts.hints = 'bold 14pt sans'
 
 # Font used in the keyhint widget.
 # Type: Font
