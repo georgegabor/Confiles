@@ -5,6 +5,7 @@
 alias l='ls'
 alias la='ls -a'
 alias lg="ls -lA --group-directories-first --sort=extension"
+alias lf="ls -l --group-directories-first --sort=extension"
 alias ls='ls --color=auto'
 alias lh='ls -a | grep "^\."'
 
