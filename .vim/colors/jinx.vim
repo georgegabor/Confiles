@@ -5,15 +5,10 @@
 
 " ---------- Setup and Checks ----------- " {{{1
 
-hi clear
-:set background=dark
 if exists('syntax_on')
     highlight clear
     syntax reset
 endif
-
-
-let colors_name = "jinx"
 
 " Colors {{{1
 
@@ -25,7 +20,7 @@ let s:jinx = {}
 " Color definition is done for both true color
 " and 256 color. The format is in ['HEX', 256color, 16color]
 "
-let s:jinx.black = ['#000000', 0, 0]
+" let s:jinx.black = ['#000000', 0, 0]
 
 let g:terminal_ansi_colors = [
             \ '#4D545E', '#D9534F', '#80B080', '#FFEB56', '#6699CC', '#CC99CC', '#5DD5FF', '#E1E1E1',
