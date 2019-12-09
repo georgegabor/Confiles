@@ -31,11 +31,15 @@ alias dl="dirs -v"                                          # List directories i
 alias mirrors='sudo reflector --score 100 --fastest 25 --sort rate --save /etc/pacman.d/mirrorlist --verbose'
 alias P='cd $HOME/Projects'
 alias D='cd $HOME/Downloads'
-alias J='cd $HOME/Documents/Pdf/Java'
 alias vim='nvim'
+# git
+alias gcl='git clone'
+alias gst='git status'
+alias gps='git push'
+alias gpl='git pull'
 
 # ===================================================================
-# ====================== Custom Funtions ============================
+# ====================== Custom Functions ============================
 # ===================================================================
 
 # Define colors for printing
