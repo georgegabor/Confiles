@@ -458,6 +458,7 @@
         <command>gnome-calculator</command>
       </action>
     </keybind>
+
     <!-- Commented out to open doublecmd instead of xfce4-settings-manager -->
     <keybind key="W-a">
       <action name="Execute">
@@ -467,6 +468,27 @@
         <command>doublecmd</command>
       </action>
     </keybind>
+
+    <!-- Set kb to hun -->
+    <keybind key="C-S-h">
+      <action name="Execute">
+        <command>notify-send "     Keyboard is set to hungarian   "</command> 
+      </action> 
+      <action name="Execute">
+        <command>setxkbmap hu</command>
+      </action>
+    </keybind>                           
+
+    <!-- Set kb to gb -->
+    <keybind key="C-S-g">
+      <action name="Execute">
+        <command>notify-send "      Keyboard is set to gb         "</command> 
+      </action> 
+      <action name="Execute">
+        <command>setxkbmap gb</command>
+      </action>
+    </keybind>
+
     <!-- To suspend -->
     <keybind key="W-q">
       <action name="Execute">
