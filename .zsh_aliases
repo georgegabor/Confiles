@@ -37,6 +37,8 @@ alias gcl='git clone'
 alias gst='git status'
 alias gps='git push'
 alias gpl='git pull'
+alias gad='git add .'
+alias gct='git commit -a'
 
 # ===================================================================
 # ====================== Custom Functions ============================
