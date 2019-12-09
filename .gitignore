@@ -128,4 +128,15 @@ gitconfig
 matritel/
 stale_outputs_checked
 zsh_history
-
+.angular-config.json
+.config/Code - OSS/
+.config/Code/
+.config/QtProject/
+.config/volumeicon/
+.gnome/
+.node-gyp/
+.ssr/
+.vscode-oss/
+.vscode/
+.yarnrc
+snap/
