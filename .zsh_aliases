@@ -32,13 +32,6 @@ alias mirrors='sudo reflector --score 100 --fastest 25 --sort rate --save /etc/p
 alias P='cd $HOME/Projects'
 alias D='cd $HOME/Downloads'
 alias vim='nvim'
-# git
-alias gcl='git clone'
-alias gst='git status'
-alias gps='git push'
-#alias gpl='git pull'
-alias gad='git add .'
-alias gct='git commit -a'
 
 # ===================================================================
 # ====================== Custom Functions ============================
@@ -74,22 +67,6 @@ function reb()
         openbox --reconfigure
     }
 
-# Git status: write the whole output of the 'git status' command into the tempgit file, then display only the modified ones
-  function gtst()
-    {
-        git status > $HOME/.tempgit
-        grep -E "modified|new file" $HOME/.tempgit
-    }
-
-# Commit and push
-function gtup()
-    {
-        printf "%s\n" "${red} >>> ${yel} Committing ${end}"
-        git commit -a -m "Up"
-        printf "%s\n" "${red} >>> ${yel} Let's push ${end}"
-        git push
-    }
-
 # Copy config files
 function backup_Asus()
         {
@@ -117,10 +94,59 @@ function ff()
         fi # closing statement of if-else block
     }
 
+# =================================================================== #
+#                               GIT                                   #
+# =================================================================== #
+
+# Git status
+  function gst()
+    {
+        printf "%s\n" "${grn}Git Status...${end}"
+        git status
+    }
+
+# Commit and push
+function gtup()
+    {
+        printf "%s\n" "${red} >>> ${yel} Committing ${end}"
+        git commit -a -m "Up"
+        printf "%s\n" "${red} >>> ${yel} Let's push ${end}"
+        git push
+    }
+
+# Git pull
 function gpl()
     {
         printf "%s\n" "${grn}Pulling the Git...${end}"
         git pull
+    }
+
+# Git push
+function gps()
+    {
+        printf "%s\n" "${grn}Pushing the Git...${end}"
+        git push
+    }
+
+# Git add
+function gad()
+    {
+        printf "%s\n" "${grn}Git add...${end}"
+        git add .
+    }
+
+# Git commit
+function gct()
+    {
+        printf "%s\n" "${grn}Let's commit...${end}"
+        git commit -a
+    }
+
+# Git clone
+function gcl()
+    {
+        printf "%s\n" "${grn}Cloning...${end}"
+        git clone ${1}
     }
 
 # ===================================================================
