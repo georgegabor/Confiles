@@ -36,7 +36,7 @@ alias vim='nvim'
 alias gcl='git clone'
 alias gst='git status'
 alias gps='git push'
-alias gpl='git pull'
+#alias gpl='git pull'
 alias gad='git add .'
 alias gct='git commit -a'
 
@@ -117,7 +117,7 @@ function ff()
         fi # closing statement of if-else block
     }
 
-function gitpull()
+function gpl()
     {
         printf "%s\n" "${grn}Pulling the Git...${end}"
         git pull
