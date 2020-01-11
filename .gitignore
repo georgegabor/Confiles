@@ -87,7 +87,7 @@
 .zcompdump-archlabs-5.7.1
 .zdirs
 .zsh/
-.zsh_history
+#.zsh_history
 .zshrcorigi
 A_Music/
 Confiles/
