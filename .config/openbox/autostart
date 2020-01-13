@@ -10,3 +10,5 @@ nitrogen --restore &
 al-polybar-session &
 
 #xfce4-power-manager &
+
+tilix &
