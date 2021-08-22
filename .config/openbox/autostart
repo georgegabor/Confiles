@@ -5,7 +5,7 @@ xfsettingsd &
 tint2 &
 
 # load wallpaper
-nitrogen --restore &
+#nitrogen --restore &
 
 al-polybar-session &
 

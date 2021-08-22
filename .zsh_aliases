@@ -4,8 +4,8 @@
 
 alias l='ls'
 alias la='ls -a'
-alias lg="ls -lA --group-directories-first --sort=extension"
-alias lf="ls -l --group-directories-first --sort=extension"
+alias lg="ls -lAh --group-directories-first --sort=extension"
+alias lf="ls -lh --group-directories-first --sort=extension"
 alias ls='ls --color=auto'
 alias lh='ls -a | grep "^\."'
 
@@ -31,6 +31,7 @@ alias dl="dirs -v"                                          # List directories i
 alias mirrors='sudo reflector --score 100 --fastest 25 --sort rate --save /etc/pacman.d/mirrorlist --verbose'
 alias P='cd $HOME/Projects'
 alias D='cd $HOME/Downloads'
+alias Z='cd Matritel/zoho_to_google_matritellabs_gitlab'
 alias vim='nvim'
 
 # ===================================================================
@@ -148,6 +149,13 @@ function gcl()
         printf "%s\n" "${grn}Cloning...${end}"
         git clone ${1}
     }
+# Git log
+function gitlog()
+{
+    printf "%s\n" "${grn}Git log...${end}"
+    git log --decorate=full --graph
+
+}
 
 # ===================================================================
 #
