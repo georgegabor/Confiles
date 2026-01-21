@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<colorTheme id="6001" ect-id="d758211f-96ed-4393-91a9-231edc2cb3a6" name="IntelliJ Dark" author="Eclipse Themes" type="dark" modified="2025-09-27T21:38:51.292Z">
+
+    <!-- Core Editor UI -->
+    <background color="#161718"/>
+    <currentLine color="#1E1F22"/>
+    <foreground color="#a1a1b1"/>
+    <lineNumber color="#4B5059"/>
+    <selectionBackground color="#293858"/>
+    <selectionForeground color="#A1A1B1"/>
+
+    <!-- Editor Highlights & Features -->
+    <filteredSearchResult color="#35353b"/>
+    <findScope color="#35353b"/>
+    <occurrence color="#373b39"/>
+    <searchResult color="#35353b"/>
+    <writeOccurrence color="#402f33"/>
+
+    <!-- Source Control (Diff) -->
+    <removedLine color="#f75464"/>
+
+    <!-- Diagnostics & Status -->
+    <deprecated color="#bcbec4" strikethrough="true"/>
+
+    <!-- Comments & Documentation -->
+    <comment color="#505060"/>
+    <doc color="#505060" italic="true"/>
+    <docLink color="#24A3FF"/>
+    <docTag color="#505060"/>
+    <docXmlTag color="#b3ae60" italic="true"/>
+    <multiLineComment color="#505060"/>
+    <taskTag color="#c3de8d" bold="true"/>
+
+    <!-- Syntax: Keywords & Operators -->
+    <bracket color="#bcbec4"/>
+    <keyword color="#cf8e6d"/>
+    <operator color="#bcbec4"/>
+
+    <!-- Syntax: Literals (Strings, Numbers) -->
+    <number color="#2aacb8"/>
+    <string color="#6aab73"/>
+
+    <!-- Syntax: Variables & Identifiers -->
+    <argument color="#bcbec4"/>
+    <constant color="#c77dbb" italic="true"/>
+    <field color="#c77dbb"/>
+    <localVariable color="#bcbec4"/>
+    <localVariableDeclaration color="#bcbec4"/>
+    <staticField color="#c77dbb" italic="true"/>
+
+    <!-- Syntax: Functions & Methods -->
+    <abstractMethod color="#56a8f5"/>
+    <inheritedMethod color="#57aaf7"/>
+    <method color="#56a8f5"/>
+    <methodDeclaration color="#56a8f5"/>
+    <staticMethod color="#57aaf7" italic="true"/>
+
+    <!-- Syntax: Types & Structures -->
+    <abstractClass color="#bcbec4"/>
+    <class color="#bcbec4"/>
+    <enum color="#bcbec4"/>
+    <interface color="#bcbec4"/>
+
+    <!-- Syntax: Meta & Advanced Constructs -->
+    <annotation color="#b3ae60"/>
+    <templateArgument color="#16baac"/>
+    <templateParameter color="#16baac"/>
+
+    <!-- Markup (XML/HTML) -->
+    <xmlAttribute color="#bcbec4"/>
+    <xmlTag color="#d5b778"/>
+</colorTheme>
